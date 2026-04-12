@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,92 +7,131 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .project-card:hover img { transform: scale(1.05); }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100 min-h-screen">
 
-    <div class="max-w-4xl mx-auto px-6 py-12">
+    <div class="max-w-5xl mx-auto px-6 py-12">
         
-        <header class="text-center mb-16">
-            <h1 class="text-5xl font-extrabold tracking-tight mb-2 text-white">OLCAY ERTAŞMIŞ</h1>
-            <p class="text-xl text-emerald-400 font-semibold mb-4">Game Developer & Founder of Yaclo Games</p>
-            <p class="text-gray-400 max-w-2xl mx-auto">
-                Temiz mimari ve sistem tasarımı odaklı profesyonel oyun geliştiricisi. Fikirleri koda, kodu eğlenceli ve akıcı mekaniklere dönüştürüyorum.
+        <header class="text-center mb-20">
+            <h1 class="text-6xl font-extrabold tracking-tighter mb-4 text-white">OLCAY ERTAŞMIŞ</h1>
+            <p class="text-2xl text-emerald-400 font-medium mb-6">Game Developer & Founder of Yaclo Games</p>
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">Unity 6</span>
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">Clean Architecture</span>
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">C# Expert</span>
+            </div>
+            <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed text-lg">
+                Yüksek performanslı sistemler ve ölçeklenebilir oyun mimarileri tasarlıyorum. Event-driven yapılar ve temiz kod prensipleriyle sürdürülebilir deneyimler inşa ediyorum.
             </p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="space-y-20">
 
-            <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-emerald-500 transition-colors">
-                <h2 class="text-2xl font-bold mb-4 flex items-center">
-                    <span class="mr-2">💼</span> Deneyim
+            <section id="projects">
+                <h2 class="text-3xl font-bold mb-10 flex items-center">
+                    <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Öne Çıkan Projeler
                 </h2>
                 
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold text-white">Yaclo Games</h3>
-                    <p class="text-emerald-400 text-sm">Founder & Game Developer | 2024 - Günümüz</p>
-                    <p class="text-sm text-gray-400 mt-1">Google Play projeleri, bağımsız oyun geliştirme ve freelance müşteri çözümleri.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold text-white">GamesMrkt</h3>
-                    <p class="text-emerald-400 text-sm">Game Developer</p>
-                    <p class="text-sm text-gray-400 mt-1">My Arcade Center projesinde core mekanik geliştirmeleri ve optimizasyon süreçleri.</p>
-                </div>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-emerald-500 transition-colors">
-                <h2 class="text-2xl font-bold mb-4 flex items-center">
-                    <span class="mr-2">🛠️</span> Teknik Yetenekler
-                </h2>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm font-medium">Unity</span>
-                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm font-medium">C#</span>
-                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm font-medium">Clean Architecture</span>
-                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm font-medium">Observer Pattern</span>
-                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm font-medium">Event-Driven Systems</span>
-                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm font-medium">Git / GitHub</span>
-                </div>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 md:col-span-2 hover:border-emerald-500 transition-colors">
-                <h2 class="text-2xl font-bold mb-4 flex items-center">
-                    <span class="mr-2">🚀</span> Öne Çıkan Projeler
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
-                    <div class="bg-gray-900 p-4 rounded-xl">
-                        <h3 class="text-lg font-bold text-white mb-1">GrimTower</h3>
-                        <p class="text-sm text-gray-400 mb-2">Wave-based zombi combat ve base defense mekanikleri. Gelişmiş health ve draft manager sistemleri.</p>
-                        <span class="text-xs text-emerald-400 font-semibold">Unity • C# • Architecture</span>
+                    <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                        <div class="h-56 overflow-hidden bg-gray-700 relative">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="GrimTower" class="w-full h-full object-cover transition-transform duration-500">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">Zombie Defense</span>
+                                <span class="bg-emerald-500 px-3 py-1 rounded-lg text-xs font-bold text-black uppercase tracking-wider">In Development</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3 text-white">GrimTower</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                                Wave-based zombi combat ve base defense mekanikleri üzerine kurulu bir strateji oyunu. Gelişmiş Health System ve Draft Manager yapılarıyla sistem odaklı bir mimari.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-3 text-xs text-emerald-400 font-bold">
+                                    <span>#Unity</span> <span>#C#</span> <span>#Architecture</span>
+                                </div>
+                                <a href="https://github.com/olcayertasmis" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors">
+                                    Detayları Gör
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="bg-gray-900 p-4 rounded-xl">
-                        <h3 class="text-lg font-bold text-white mb-1">Seat Away</h3>
-                        <p class="text-sm text-gray-400 mb-2">Teknik değerlendirme projesi. Temiz kod prensipleri ve core mekanik odaklı yapı.</p>
-                        <span class="text-xs text-emerald-400 font-semibold">Technical Case Study</span>
+                    <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                        <div class="h-56 overflow-hidden bg-gray-700 relative">
+                            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="My Arcade Center" class="w-full h-full object-cover transition-transform duration-500">
+                            <div class="absolute top-4 left-4 flex gap-2">
+                                <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">Arcade / Management</span>
+                                <span class="bg-blue-500 px-3 py-1 rounded-lg text-xs font-bold text-white uppercase tracking-wider">Live on Play Store</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3 text-white">My Arcade Center</h3>
+                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                                GamesMrkt bünyesinde geliştirilen yönetim simülasyonu. Core mekaniklerin optimizasyonu ve Unity 6 entegrasyonu süreçlerini yönettiğim profesyonel çalışma.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-3 text-xs text-emerald-400 font-bold">
+                                    <span>#Mobile</span> <span>#Simulation</span> <span>#Management</span>
+                                </div>
+                                <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black rounded-xl text-xs font-black uppercase tracking-widest transition-colors">
+                                    Play Store
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <span class="text-emerald-500 text-xs font-black tracking-widest uppercase">Technical Case</span>
+                                    <h3 class="text-2xl font-bold text-white mt-1">Seat Away</h3>
+                                </div>
+                                <span class="bg-gray-700 p-2 rounded-lg text-sm">🧩</span>
+                            </div>
+                            <p class="text-gray-400 mb-6 text-sm">
+                                Round 3 Studios için hazırlanan teknik değerlendirme projesi. Observer Pattern ve Event-Driven tasarımı en saf haliyle sergileyen kod yapısı.
+                            </p>
+                            <div class="flex gap-2 mb-6">
+                                <span class="px-2 py-1 bg-gray-900 rounded-md text-[10px] text-gray-400">SOLID</span>
+                                <span class="px-2 py-1 bg-gray-900 rounded-md text-[10px] text-gray-400">Unity Events</span>
+                                <span class="px-2 py-1 bg-gray-900 rounded-md text-[10px] text-gray-400">Optimization</span>
+                            </div>
+                            <a href="https://github.com/olcayertasmis" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline">Repoyu İncele →</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-600 rounded-3xl p-8 flex flex-col justify-center text-black">
+                        <h3 class="text-3xl font-black mb-4">Profesyonel Deneyim</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="font-bold text-lg">Yaclo Games</p>
+                                <p class="text-sm font-medium opacity-80 text-black">Founder & Freelance Developer</p>
+                            </div>
+                            <div class="h-px bg-black/20"></div>
+                            <div>
+                                <p class="font-bold text-lg">GamesMrkt</p>
+                                <p class="text-sm font-medium opacity-80 text-black">Game Developer</p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
-            </div>
-
+            </section>
         </div>
 
-        <footer class="mt-16 text-center">
-            <h2 class="text-2xl font-bold mb-6">İletişime Geç</h2>
-            <div class="flex justify-center space-x-4">
-                <a href="https://www.linkedin.com/in/olcayertasmis/" target="_blank" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-lg transition-colors">
-                    LinkedIn
-                </a>
-                <a href="https://github.com/olcayertasmis" target="_blank" class="px-6 py-2 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors">
-                    GitHub
-                </a>
-                <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="px-6 py-2 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors">
-                    Google Play
-                </a>
+        <footer class="mt-24 pt-12 border-t border-gray-800 text-center">
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.linkedin.com/in/olcayertasmis/" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">LinkedIn</a>
+                <a href="https://github.com/olcayertasmis" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">GitHub</a>
+                <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">Google Play</a>
             </div>
-            <p class="text-gray-500 text-sm mt-8">© 2026 Olcay Ertaşmış. All systems operational.</p>
+            <p class="text-gray-600 text-xs">© 2026 Olcay Ertaşmış. Tasarım ve Kodlama: Olcay Ertaşmış & AI.</p>
         </footer>
 
     </div>
