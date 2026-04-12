@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; }
         .project-card:hover img { transform: scale(1.05); }
+        .cert-card:hover img { transform: scale(1.05); }
         body.modal-open { overflow: hidden; }
     </style>
 </head>
@@ -19,10 +20,10 @@
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="font-bold text-emerald-400 tracking-wider">Olcay ERTAŞMIŞ</span>
             <div class="space-x-6 text-sm font-semibold hidden md:block">
-                <a href="#about" class="text-gray-400 hover:text-white transition-colors">Hakkımda</a>
-                <a href="#experience" class="text-gray-400 hover:text-white transition-colors">Deneyim</a>
-                <a href="#education" class="text-gray-400 hover:text-white transition-colors">Eğitim</a>
-                <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projeler</a>
+                <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
+                <a href="#education" class="text-gray-400 hover:text-white transition-colors">Education & Certs</a>
+                <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
             </div>
         </div>
     </nav>
@@ -39,86 +40,124 @@
                 <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">Backend Integration</span>
             </div>
             <p class="text-gray-400 max-w-3xl mx-auto leading-relaxed text-lg">
-                Kastamonu Üniversitesi Bilgisayar Mühendisliği mezunu, yüksek performanslı sistemler ve ölçeklenebilir oyun mimarileri tasarlayan profesyonel oyun geliştiricisi. Nakama gibi backend sistemleri, Event-driven yapılar ve temiz kod prensipleriyle sürdürülebilir deneyimler inşa ediyorum.
+                Computer Engineering graduate and professional game developer focused on designing high-performance systems and scalable game architectures. I build sustainable experiences using clean code principles, event-driven structures, and server-driven backend systems.
             </p>
         </section>
 
         <section id="experience" class="mb-24 scroll-mt-24">
-            <h2 class="text-3xl font-bold mb-8 flex items-center">
-                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Deneyim
+            <h2 class="text-3xl font-bold mb-10 flex items-center">
+                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Experience
             </h2>
             
-            <div class="space-y-6">
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-start">
+            <div class="space-y-8">
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
                     <div class="w-full md:w-1/3">
-                        <h3 class="text-xl font-bold text-white mb-1">Yaclo Games</h3>
-                        <p class="text-emerald-400 text-sm font-semibold">Game Developer & Founder</p>
-                        <p class="text-xs text-gray-500 mt-1">2024 - Günümüz</p>
+                        <h3 class="text-2xl font-bold text-white mb-1">Yaclo Games</h3>
+                        <p class="text-emerald-400 text-base font-semibold">Founder & Game Developer</p>
+                        <p class="text-sm text-gray-500 mt-2">2024 - Present</p>
                     </div>
-                    <div class="w-full md:w-2/3 text-gray-400 text-sm leading-relaxed">
-                        Google Play için bağımsız oyun projeleri geliştirme ve teknik mimari tasarımı. Müşteriler için freelance sistem çözümleri üretimi.
+                    <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed">
+                        <p>Developing independent game projects for Google Play and designing technical architectures. Providing freelance system solutions and game development services for clients from scratch.</p>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-start">
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
                     <div class="w-full md:w-1/3">
-                        <h3 class="text-xl font-bold text-white mb-1">GamesMrkt</h3>
-                        <p class="text-emerald-400 text-sm font-semibold">Game Developer</p>
-                        <p class="text-xs text-gray-500 mt-1">2023 - 2025</p>
+                        <h3 class="text-2xl font-bold text-white mb-1">GamesMrkt</h3>
+                        <p class="text-emerald-400 text-base font-semibold">Game Developer</p>
+                        <p class="text-sm text-gray-500 mt-2">2023 - 2025</p>
                     </div>
-                    <div class="w-full md:w-2/3 text-gray-400 text-sm leading-relaxed space-y-2">
-                        <p><strong>My Arcade Center</strong> projesinde 500.000'den fazla indirme ve yüksek gelir elde eden live-ops süreçlerini yönettim.</p>
-                        <ul class="list-disc list-inside space-y-1 ml-2 text-gray-300">
-                            <li>Nakama backend ve Satori Feature Flags ile sunucu tabanlı oynanış mantığı entegrasyonu.</li>
-                            <li>WebGL sürümü adaptasyonu ve web platformlarında başarılı yayın süreçleri.</li>
-                            <li>Mobil performans odaklı, optimize edilmiş kod mimarisi (Akedo Map Tool vb.).</li>
+                    <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed space-y-3">
+                        <p>Worked on a live mobile game (<strong>My Arcade Center</strong>) with 500K+ downloads. Managed core mechanic development and optimization processes.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-400">
+                            <li>Implemented new gameplay features using Nakama backend and Satori Feature Flags.</li>
+                            <li>Developed server-driven, maintainable gameplay logic focused on live updates and performance.</li>
+                            <li>Adapted the game for WebGL and successfully integrated it across various web platforms.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-gray-800/50 border border-gray-700 rounded-2xl p-6">
-                        <h3 class="text-lg font-bold text-white mb-1">Egerobot</h3>
-                        <p class="text-emerald-400 text-xs font-semibold mb-2">VR/AR/MR/XR Intern | 2023</p>
-                        <p class="text-xs text-gray-400">İş Sağlığı ve Güvenliği için Unity ile 3D interaktif simülasyon ve senaryo mantığı geliştirme.</p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
+                    <div class="w-full md:w-1/3">
+                        <h3 class="text-2xl font-bold text-white mb-1">Egerobot</h3>
+                        <p class="text-emerald-400 text-base font-semibold">VR/AR/MR/XR Intern</p>
+                        <p class="text-sm text-gray-500 mt-2">2023 (4 months)</p>
                     </div>
-                    <div class="bg-gray-800/50 border border-gray-700 rounded-2xl p-6">
-                        <h3 class="text-lg font-bold text-white mb-1">Omicron Game</h3>
-                        <p class="text-emerald-400 text-xs font-semibold mb-2">Game Developer Intern | 2022</p>
-                        <p class="text-xs text-gray-400">Sıfırdan "Planet Explorer" adlı 3D mobil oyunun tüm geliştirme (karakter, UI, mekanik) süreçleri.</p>
+                    <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed">
+                        <p>Developed virtual environments for Occupational Health and Safety. Designed realistic 3D virtual environments and implemented scenario logic using Unity, allowing users to navigate and identify hazardous situations in a controlled digital space.</p>
                     </div>
-                    <div class="bg-gray-800/50 border border-gray-700 rounded-2xl p-6">
-                        <h3 class="text-lg font-bold text-white mb-1">Hunel Games</h3>
-                        <p class="text-emerald-400 text-xs font-semibold mb-2">Game Tester | 2020 - 2022</p>
-                        <p class="text-xs text-gray-400">Kalite güvence süreçleri, hata tespiti ve oyun içi mekaniklerin test edilmesi.</p>
+                </div>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
+                    <div class="w-full md:w-1/3">
+                        <h3 class="text-2xl font-bold text-white mb-1">Omicron Game</h3>
+                        <p class="text-emerald-400 text-base font-semibold">Game Developer Intern</p>
+                        <p class="text-sm text-gray-500 mt-2">2022 (2 months)</p>
+                    </div>
+                    <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed">
+                        <p>Developed the 3D mobile game "Planet Explorer" from scratch. Handled the entire development process, including the implementation of character movement, trap mechanics, enemy AI logic, and the User Interface.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
+                    <div class="w-full md:w-1/3">
+                        <h3 class="text-2xl font-bold text-white mb-1">Hunel Games</h3>
+                        <p class="text-emerald-400 text-base font-semibold">Game Tester</p>
+                        <p class="text-sm text-gray-500 mt-2">2020 - 2022</p>
+                    </div>
+                    <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed">
+                        <p>Involved in Quality Assurance processes. Executed detailed testing of in-game mechanics, identified bugs, and contributed to overall game stability and user experience improvements.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="education" class="mb-24 scroll-mt-24">
-            <h2 class="text-3xl font-bold mb-8 flex items-center">
-                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Eğitim & Sertifikalar
+            <h2 class="text-3xl font-bold mb-10 flex items-center">
+                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Education & Certificates
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="space-y-8">
                 
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-4">Üniversite</h3>
-                    <p class="text-lg font-bold text-emerald-400">Kastamonu Üniversitesi</p>
-                    <p class="text-sm text-gray-300 font-semibold mb-2">Bilgisayar Mühendisliği (Lisans)</p>
-                    <p class="text-xs text-gray-500 mb-4">2019 - 2023 | GPA: 3.17</p>
-                    <p class="text-xs text-gray-400">Özgür Öğrenci Fikirleri kurucu üyeliği ve yazılım eğitimine interaktif yaklaşımlar (Yaratıcı Drama Eğitimi).</p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
+                    <div class="w-full md:w-1/3">
+                        <h3 class="text-2xl font-bold text-white mb-1">Kastamonu University</h3>
+                        <p class="text-emerald-400 text-base font-semibold">Bachelor's Degree</p>
+                        <p class="text-sm text-gray-500 mt-2">2019 - 2023 | GPA: 3.17</p>
+                    </div>
+                    <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed">
+                        <p class="font-bold text-lg text-white mb-2">Computer Engineering</p>
+                        <p>I was a founding member of "Free Student's Ideas", where I completed Creative Drama Training to explore interactive approaches to software education.</p>
+                    </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-4">Akademi Eğitimleri</h3>
-                    <div class="mb-4">
-                        <p class="text-sm font-bold text-emerald-400">SoftITo Game Developer Academy</p>
-                        <p class="text-xs text-gray-400">320 saatlik kapsamlı Unity, C#, oyun mekanikleri ve UI tasarımı eğitimi (2023).</p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center shadow-lg">
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-2xl font-bold text-white mb-2">Google Game and Application Academy</h3>
+                        <p class="text-emerald-400 text-sm font-semibold mb-4">Graduation Certificate | 2022 - 2023</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Graduated from the Game and Application Academy, implemented with the support of the Ministry of Industry and Technology, Google Turkey, and the Entrepreneurship Foundation.
+                        </p>
                     </div>
-                    <div>
-                        <p class="text-sm font-bold text-emerald-400">Google Oyun ve Uygulama Akademisi</p>
-                        <p class="text-xs text-gray-400">T.C. Sanayi ve Teknoloji Bakanlığı, Google Türkiye ve Girişimcilik Vakfı destekli 8 aylık mezuniyet (2022-2023).</p>
+                    <div class="w-full md:w-1/3">
+                        <a href="images/google-cert-highres.jpg" target="_blank" class="cert-card block overflow-hidden rounded-xl border-2 border-gray-600 hover:border-emerald-500 transition-colors shadow-md">
+                            <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&w=600&q=80" alt="Google Academy Certificate" class="w-full h-auto object-cover transition-transform duration-500">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center shadow-lg">
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-2xl font-bold text-white mb-2">SoftITo Game Developer Academy</h3>
+                        <p class="text-emerald-400 text-sm font-semibold mb-4">Certificate of Achievement | 2023</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Successfully completed a 320-hour game development training program organized by the Istanbul Chamber of Commerce. Gained expertise in Unity, C# scripting, game mechanics, and UI design.
+                        </p>
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <a href="images/softito-cert-highres.jpg" target="_blank" class="cert-card block overflow-hidden rounded-xl border-2 border-gray-600 hover:border-emerald-500 transition-colors shadow-md">
+                            <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&w=600&q=80" alt="SoftITo Certificate" class="w-full h-auto object-cover transition-transform duration-500">
+                        </a>
                     </div>
                 </div>
 
@@ -127,7 +166,7 @@
 
         <section id="projects" class="scroll-mt-24">
             <h2 class="text-3xl font-bold mb-10 flex items-center">
-                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Öne Çıkan Projeler
+                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Featured Projects
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -136,20 +175,20 @@
                     <div class="h-56 overflow-hidden bg-gray-700 relative">
                         <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="My Arcade Center" class="w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-4 left-4 flex gap-2">
-                            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">500K+ İndirme</span>
+                            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">500K+ Downloads</span>
                         </div>
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-3 text-white">My Arcade Center</h3>
                         <p class="text-gray-400 mb-6 text-sm leading-relaxed">
-                            GamesMrkt bünyesinde geliştirilen yönetim simülasyonu. Nakama backend, Satori ve WebGL entegrasyonlarını yürüttüğüm yüksek cirolu proje.
+                            Idle management simulation developed at GamesMrkt. Implemented backend integration with Nakama and handled WebGL ports.
                         </p>
                         <div class="flex items-center justify-between">
                             <div class="flex gap-2 text-xs text-emerald-400 font-bold">
                                 <span>#Mobile/Web</span> <span>#LiveOps</span>
                             </div>
                             <button onclick="openModal('modal-arcade')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
-                                Detayları Gör
+                                View Details
                             </button>
                         </div>
                     </div>
@@ -165,14 +204,14 @@
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-3 text-white">GrimTower</h3>
                         <p class="text-gray-400 mb-6 text-sm leading-relaxed">
-                            Wave-based zombi combat ve base defense mekanikleri üzerine kurulu strateji oyunu. Gelişmiş Health ve Draft Manager sistemleri.
+                            A strategy game based on wave-based zombie combat and base defense mechanics. Features advanced Health and Draft Manager systems.
                         </p>
                         <div class="flex items-center justify-between">
                             <div class="flex gap-2 text-xs text-emerald-400 font-bold">
                                 <span>#Unity</span> <span>#Architecture</span>
                             </div>
                             <button onclick="openModal('modal-grimtower')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
-                                Detayları Gör
+                                View Details
                             </button>
                         </div>
                     </div>
@@ -188,14 +227,14 @@
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-3 text-white">Planet Explorer</h3>
                         <p class="text-gray-400 mb-6 text-sm leading-relaxed">
-                            Omicron Game sürecinde sıfırdan geliştirdiğim proje. Karakter hareketi, tuzak mekanikleri ve düşman yapay zekasını barındırır.
+                            A 3D mobile game developed from scratch. The core mechanic focuses on protecting an astronaut by placing strategic traps on the path.
                         </p>
                         <div class="flex items-center justify-between">
                             <div class="flex gap-2 text-xs text-emerald-400 font-bold">
                                 <span>#3D</span> <span>#Mobile</span>
                             </div>
                             <button onclick="openModal('modal-planet')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
-                                Detayları Gör
+                                View Details
                             </button>
                         </div>
                     </div>
@@ -211,14 +250,14 @@
                             <span class="bg-gray-700 p-2 rounded-lg text-sm">🧩</span>
                         </div>
                         <p class="text-gray-400 mb-6 text-sm">
-                            Temiz kod prensipleri, Observer Pattern ve Event-Driven tasarımı en saf haliyle sergileyen teknik değerlendirme projesi.
+                            A technical assessment project demonstrating clean code principles. Built on Observer Pattern and Event-Driven architecture in its purest form.
                         </p>
                         <div class="flex gap-2 mb-6">
                             <span class="px-2 py-1 bg-gray-900 rounded-md text-[10px] text-gray-400">SOLID</span>
                             <span class="px-2 py-1 bg-gray-900 rounded-md text-[10px] text-gray-400">Unity Events</span>
                             <span class="px-2 py-1 bg-gray-900 rounded-md text-[10px] text-gray-400">Optimization</span>
                         </div>
-                        <a href="https://github.com/olcayertasmis" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline mt-auto">Repoyu İncele →</a>
+                        <a href="https://github.com/olcayertasmis" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline mt-auto">View Repository →</a>
                     </div>
                 </div>
 
@@ -226,7 +265,7 @@
         </section>
 
         <footer class="mt-24 pt-12 border-t border-gray-800 text-center">
-            <h2 class="text-2xl font-bold mb-6 text-white">İletişim</h2>
+            <h2 class="text-2xl font-bold mb-6 text-white">Contact</h2>
             <p class="text-emerald-400 font-semibold mb-6">ertasolcay@hotmail.com</p>
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="https://www.linkedin.com/in/olcayertasmis/" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">LinkedIn</a>
@@ -247,14 +286,14 @@
                     <h3 class="text-3xl font-bold text-white mb-2">My Arcade Center</h3>
                     <p class="text-emerald-400 text-sm font-semibold mb-6">Idle Management Simulation | 500K+ Downloads</p>
                     <p class="mb-6 leading-relaxed">
-                        GamesMrkt altında geliştirilen ve Kyoso Interactive tarafından yayınlanan tam ölçekli idle arcade oyunu. Akedo Map Tool, server-based JSON ve Satori Feature Flags entegrasyonlarını kurdum. Nakama backend kullanarak optimize edilmiş mobil performansa sahip bir altyapı inşa ettim ve oyunun WebGL adaptasyonunu tek başıma tamamladım.
+                        A full-scale idle arcade game developed under GamesMrkt and published by Kyoso Interactive. Implemented the Akedo Map Tool, server-based JSON, and Satori Feature Flags. Utilized the Nakama backend for player data, focusing on optimized code for mobile performance. I also solely managed the technical adaptation for WebGL platforms.
                     </p>
-                    <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="inline-block px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg mb-6 transition-colors">Play Store'da Gör</a>
-                    <h4 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Ekran Görüntüleri</h4>
+                    <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="inline-block px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg mb-6 transition-colors">Get it on Google Play</a>
+                    <h4 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Screenshots</h4>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Görsel Eklenecek</div>
-                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Görsel Eklenecek</div>
-                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Görsel Eklenecek</div>
+                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Image Placeholder</div>
+                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Image Placeholder</div>
+                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Image Placeholder</div>
                     </div>
                 </div>
             </div>
@@ -270,13 +309,13 @@
                     <h3 class="text-3xl font-bold text-white mb-2">GrimTower</h3>
                     <p class="text-emerald-400 text-sm font-semibold mb-6">Zombie Defense & Strategy</p>
                     <p class="mb-6 leading-relaxed">
-                        GrimTower, wave-based zombi combat mekanikleri ile base defense yapısını birleştiren bir oyundur. Proje içerisinde <strong class="text-white">Health System</strong> ve <strong class="text-white">Draft Manager</strong> gibi sistemler modüler bir mimariyle geliştirilmiştir.
+                        GrimTower is a game that combines wave-based zombie combat mechanics with base defense structure. Advanced systems such as the <strong class="text-white">Health System</strong> and <strong class="text-white">Draft Manager</strong> have been developed with a modular architecture approach.
                     </p>
-                    <h4 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Ekran Görüntüleri</h4>
+                    <h4 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Screenshots</h4>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Görsel Eklenecek</div>
-                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Görsel Eklenecek</div>
-                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Görsel Eklenecek</div>
+                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Image Placeholder</div>
+                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Image Placeholder</div>
+                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Image Placeholder</div>
                     </div>
                 </div>
             </div>
@@ -292,13 +331,13 @@
                     <h3 class="text-3xl font-bold text-white mb-2">Planet Explorer</h3>
                     <p class="text-emerald-400 text-sm font-semibold mb-6">3D Mobile Game | Omicron Game</p>
                     <p class="mb-6 leading-relaxed">
-                        Omicron Game stajım sırasında sıfırdan geliştirdiğim 3D mobil oyun. Amacın, bir yolda ilerleyen astronotu düşmanlardan korumak için tuzaklar yerleştirmek olduğu bu projede; karakter hareketi, tuzak mekanikleri, düşman yapay zekası ve kullanıcı arayüzü (UI) dahil olmak üzere tüm geliştirme süreçlerini bizzat üstlendim.
+                        A 3D mobile game developed from scratch during my internship at Omicron Game. The objective is to protect an astronaut traveling along a path by placing traps to stop incoming enemies. I was responsible for the entire development process, including the implementation of character movement, trap mechanics, enemy logic, and the UI.
                     </p>
-                    <h4 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Ekran Görüntüleri</h4>
+                    <h4 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Screenshots</h4>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Görsel Eklenecek</div>
-                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Görsel Eklenecek</div>
-                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Görsel Eklenecek</div>
+                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Image Placeholder</div>
+                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Image Placeholder</div>
+                        <div class="bg-gray-800 rounded-lg h-32 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">Image Placeholder</div>
                     </div>
                 </div>
             </div>
