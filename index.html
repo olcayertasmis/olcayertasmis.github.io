@@ -7,123 +7,110 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
         .project-card:hover img { transform: scale(1.05); }
+        body.modal-open { overflow: hidden; }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100 min-h-screen">
 
-    <div class="max-w-5xl mx-auto px-6 py-12">
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md border-b border-gray-800 z-40">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold text-emerald-400 tracking-wider">OLCAY.</span>
+            <div class="space-x-6 text-sm font-semibold">
+                <a href="#about" class="text-gray-400 hover:text-white transition-colors">Hakkımda</a>
+                <a href="#experience" class="text-gray-400 hover:text-white transition-colors">Deneyim</a>
+                <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projeler</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-5xl mx-auto px-6 pt-32 pb-12">
         
-        <header class="text-center mb-20">
+        <section id="about" class="text-center mb-24 pt-10">
             <h1 class="text-6xl font-extrabold tracking-tighter mb-4 text-white">OLCAY ERTAŞMIŞ</h1>
             <p class="text-2xl text-emerald-400 font-medium mb-6">Game Developer & Founder of Yaclo Games</p>
             <div class="flex flex-wrap justify-center gap-3 mb-8">
-                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">Unity 6</span>
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">Unity</span>
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">C#</span>
                 <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">Clean Architecture</span>
-                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">C# Expert</span>
             </div>
             <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed text-lg">
                 Yüksek performanslı sistemler ve ölçeklenebilir oyun mimarileri tasarlıyorum. Event-driven yapılar ve temiz kod prensipleriyle sürdürülebilir deneyimler inşa ediyorum.
             </p>
-        </header>
+        </section>
 
-        <div class="space-y-20">
-
-            <section id="projects">
-                <h2 class="text-3xl font-bold mb-10 flex items-center">
-                    <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Öne Çıkan Projeler
-                </h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                    <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
-                        <div class="h-56 overflow-hidden bg-gray-700 relative">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="GrimTower" class="w-full h-full object-cover transition-transform duration-500">
-                            <div class="absolute top-4 left-4 flex gap-2">
-                                <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">Zombie Defense</span>
-                                <span class="bg-emerald-500 px-3 py-1 rounded-lg text-xs font-bold text-black uppercase tracking-wider">In Development</span>
-                            </div>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="text-2xl font-bold mb-3 text-white">GrimTower</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">
-                                Wave-based zombi combat ve base defense mekanikleri üzerine kurulu bir strateji oyunu. Gelişmiş Health System ve Draft Manager yapılarıyla sistem odaklı bir mimari.
-                            </p>
-                            <div class="flex items-center justify-between">
-                                <div class="flex gap-3 text-xs text-emerald-400 font-bold">
-                                    <span>#Unity</span> <span>#C#</span> <span>#Architecture</span>
-                                </div>
-                                <a href="https://github.com/olcayertasmis" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors">
-                                    Detayları Gör
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
-                        <div class="h-56 overflow-hidden bg-gray-700 relative">
-                            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="My Arcade Center" class="w-full h-full object-cover transition-transform duration-500">
-                            <div class="absolute top-4 left-4 flex gap-2">
-                                <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">Arcade / Management</span>
-                                <span class="bg-blue-500 px-3 py-1 rounded-lg text-xs font-bold text-white uppercase tracking-wider">Live on Play Store</span>
-                            </div>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="text-2xl font-bold mb-3 text-white">My Arcade Center</h3>
-                            <p class="text-gray-400 mb-6 text-sm leading-relaxed">
-                                GamesMrkt bünyesinde geliştirilen yönetim simülasyonu. Core mekaniklerin optimizasyonu ve Unity 6 entegrasyonu süreçlerini yönettiğim profesyonel çalışma.
-                            </p>
-                            <div class="flex items-center justify-between">
-                                <div class="flex gap-3 text-xs text-emerald-400 font-bold">
-                                    <span>#Mobile</span> <span>#Simulation</span> <span>#Management</span>
-                                </div>
-                                <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black rounded-xl text-xs font-black uppercase tracking-widest transition-colors">
-                                    Play Store
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
-                        <div class="p-8">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <span class="text-emerald-500 text-xs font-black tracking-widest uppercase">Technical Case</span>
-                                    <h3 class="text-2xl font-bold text-white mt-1">Seat Away</h3>
-                                </div>
-                                <span class="bg-gray-700 p-2 rounded-lg text-sm">🧩</span>
-                            </div>
-                            <p class="text-gray-400 mb-6 text-sm">
-                                Round 3 Studios için hazırlanan teknik değerlendirme projesi. Observer Pattern ve Event-Driven tasarımı en saf haliyle sergileyen kod yapısı.
-                            </p>
-                            <div class="flex gap-2 mb-6">
-                                <span class="px-2 py-1 bg-gray-900 rounded-md text-[10px] text-gray-400">SOLID</span>
-                                <span class="px-2 py-1 bg-gray-900 rounded-md text-[10px] text-gray-400">Unity Events</span>
-                                <span class="px-2 py-1 bg-gray-900 rounded-md text-[10px] text-gray-400">Optimization</span>
-                            </div>
-                            <a href="https://github.com/olcayertasmis" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline">Repoyu İncele →</a>
-                        </div>
-                    </div>
-
-                    <div class="bg-emerald-600 rounded-3xl p-8 flex flex-col justify-center text-black">
-                        <h3 class="text-3xl font-black mb-4">Profesyonel Deneyim</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <p class="font-bold text-lg">Yaclo Games</p>
-                                <p class="text-sm font-medium opacity-80 text-black">Founder & Freelance Developer</p>
-                            </div>
-                            <div class="h-px bg-black/20"></div>
-                            <div>
-                                <p class="font-bold text-lg">GamesMrkt</p>
-                                <p class="text-sm font-medium opacity-80 text-black">Game Developer</p>
-                            </div>
-                        </div>
-                    </div>
-
+        <section id="experience" class="mb-24 scroll-mt-24">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Deneyim
+            </h2>
+            <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8">
+                <div class="flex-1 border-b md:border-b-0 md:border-r border-gray-700 pb-8 md:pb-0 md:pr-8">
+                    <h3 class="text-xl font-bold text-white mb-1">Yaclo Games</h3>
+                    <p class="text-emerald-400 text-sm font-semibold mb-4">Founder & Freelance Developer <span class="text-gray-500 ml-2">| 2024 - Günümüz</span></p>
+                    <p class="text-sm text-gray-400">Google Play için bağımsız oyun projeleri geliştirme ve teknik mimari tasarımı. Müşteriler için freelance sistem çözümleri üretimi.</p>
                 </div>
-            </section>
-        </div>
+                <div class="flex-1">
+                    <h3 class="text-xl font-bold text-white mb-1">GamesMrkt</h3>
+                    <p class="text-emerald-400 text-sm font-semibold mb-4">Game Developer</p>
+                    <p class="text-sm text-gray-400">My Arcade Center projesinde core mekanik geliştirmeleri, optimizasyon süreçleri ve Unity entegrasyonları.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="scroll-mt-24">
+            <h2 class="text-3xl font-bold mb-10 flex items-center">
+                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Öne Çıkan Projeler
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                    <div class="h-56 overflow-hidden bg-gray-700 relative">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="GrimTower" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">Zombie Defense</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-white">GrimTower</h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            Wave-based zombi combat ve base defense mekanikleri üzerine kurulu strateji oyunu.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2 text-xs text-emerald-400 font-bold">
+                                <span>#Unity</span> <span>#C#</span>
+                            </div>
+                            <button onclick="openModal('modal-grimtower')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
+                                Detayları Gör
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                    <div class="h-56 overflow-hidden bg-gray-700 relative">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="My Arcade Center" class="w-full h-full object-cover transition-transform duration-500">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-white">My Arcade Center</h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            GamesMrkt bünyesinde geliştirilen yönetim simülasyonu. Core mekaniklerin optimizasyonu.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2 text-xs text-emerald-400 font-bold">
+                                <span>#Mobile</span> <span>#Simulation</span>
+                            </div>
+                            <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black rounded-xl text-xs font-black uppercase tracking-widest transition-colors">
+                                Play Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
         <footer class="mt-24 pt-12 border-t border-gray-800 text-center">
             <div class="flex justify-center space-x-6 mb-8">
@@ -131,10 +118,61 @@
                 <a href="https://github.com/olcayertasmis" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">GitHub</a>
                 <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">Google Play</a>
             </div>
-            <p class="text-gray-600 text-xs">© 2026 Olcay Ertaşmış. Tasarım ve Kodlama: Olcay Ertaşmış & AI.</p>
+            <p class="text-gray-600 text-xs">© 2026 Olcay Ertaşmış. All systems operational.</p>
         </footer>
 
     </div>
 
+    <div id="modal-grimtower" class="fixed inset-0 bg-black/90 z-50 hidden opacity-0 transition-opacity duration-300 overflow-y-auto" onclick="closeModal('modal-grimtower')">
+        <div class="min-h-screen px-4 text-center">
+            <span class="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+            
+            <div class="inline-block w-full max-w-4xl p-6 my-8 text-left align-middle transition-all transform bg-gray-900 border border-gray-700 shadow-xl rounded-2xl relative" onclick="event.stopPropagation()">
+                
+                <button onclick="closeModal('modal-grimtower')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
+                
+                <div class="mt-2 text-gray-300">
+                    <h3 class="text-3xl font-bold text-white mb-2">GrimTower</h3>
+                    <p class="text-emerald-400 text-sm font-semibold mb-6">Zombie Defense & Strategy</p>
+                    
+                    <div class="aspect-video bg-black rounded-lg mb-6 overflow-hidden">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Game Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <p class="mb-6 leading-relaxed">
+                        GrimTower, wave-based zombi combat mekanikleri ile base defense yapısını birleştiren bir oyundur. Proje içerisinde <strong class="text-white">Health System</strong> ve <strong class="text-white">Draft Manager</strong> gibi sistemler modüler bir mimariyle (Clean Architecture) geliştirilmiştir.
+                    </p>
+
+                    <h4 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Ekran Görüntüleri</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=400&q=80" class="rounded-lg object-cover h-32 w-full border border-gray-700" alt="Screenshot 1">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=400&q=80" class="rounded-lg object-cover h-32 w-full border border-gray-700" alt="Screenshot 2">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=400&q=80" class="rounded-lg object-cover h-32 w-full border border-gray-700" alt="Screenshot 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('opacity-0');
+            // Animasyon bitince display:none
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+            }, 300);
+        }
+    </script>
 </body>
 </html>
