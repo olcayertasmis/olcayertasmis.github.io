@@ -177,7 +177,7 @@
             </div>
         </section>
 
-        <section id="projects" class="scroll-mt-24 mb-16">
+        <section id="projects" class="scroll-mt-24 mb-24">
             <h2 class="text-3xl font-bold mb-10 flex items-center">
                 <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Featured Projects
             </h2>
@@ -185,25 +185,23 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
-                    <div class="h-56 overflow-hidden bg-gray-700 relative">
-                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="My Arcade Center" class="w-full h-full object-cover transition-transform duration-500">
-                        <div class="absolute top-4 left-4 flex gap-2">
-                            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">500K+ Downloads</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-white">My Arcade Center</h3>
-                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
-                            Idle management simulation developed at GamesMrkt. Implemented backend integration with Nakama and handled WebGL ports.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex gap-2 text-xs text-emerald-400 font-bold">
-                                <span>#Mobile/Web</span> <span>#LiveOps</span>
+                    <div class="p-8 h-full flex flex-col justify-center">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="text-emerald-500 text-xs font-black tracking-widest uppercase">Technical Case</span>
+                                <h3 class="text-2xl font-bold text-white mt-1">Seat Away <span class="text-sm font-normal text-gray-500 ml-2">2026</span></h3>
                             </div>
-                            <button onclick="openModal('modal-arcade')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
-                                View Details
-                            </button>
+                            <span class="bg-gray-700 p-2 rounded-lg text-sm">🧩</span>
                         </div>
+                        <p class="text-gray-400 mb-6 text-sm">
+                            A technical assessment project demonstrating clean code principles. Built on Observer Pattern and Event-Driven architecture in its purest form.
+                        </p>
+                        <div class="flex gap-2 mb-6">
+                            <span class="px-3 py-1 bg-purple-900/50 text-purple-300 border border-purple-700/50 rounded-md text-xs font-semibold">SOLID</span>
+                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 border border-blue-700/50 rounded-md text-xs font-semibold">Unity Events</span>
+                            <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 border border-cyan-700/50 rounded-md text-xs font-semibold">Optimization</span>
+                        </div>
+                        <a href="https://github.com/olcayertasmis/Seat-Away" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline mt-auto">View Repository →</a>
                     </div>
                 </div>
 
@@ -224,6 +222,29 @@
                                 <span>#Unity</span> <span>#Architecture</span>
                             </div>
                             <button onclick="openModal('modal-grimtower')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                    <div class="h-56 overflow-hidden bg-gray-700 relative">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="My Arcade Center" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">500K+ Downloads</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-white">My Arcade Center <span class="text-sm font-normal text-gray-500 ml-2">2023 - 2025</span></h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            Idle management simulation developed at GamesMrkt. Implemented backend integration with Nakama and handled WebGL ports.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2 text-xs text-emerald-400 font-bold">
+                                <span>#Mobile/Web</span> <span>#LiveOps</span>
+                            </div>
+                            <button onclick="openModal('modal-arcade')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
                                 View Details
                             </button>
                         </div>
@@ -253,119 +274,148 @@
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
-                    <div class="p-8 h-full flex flex-col justify-center">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span class="text-emerald-500 text-xs font-black tracking-widest uppercase">Technical Case</span>
-                                <h3 class="text-2xl font-bold text-white mt-1">Seat Away <span class="text-sm font-normal text-gray-500 ml-2">2026</span></h3>
-                            </div>
-                            <span class="bg-gray-700 p-2 rounded-lg text-sm">🧩</span>
-                        </div>
-                        <p class="text-gray-400 mb-6 text-sm">
-                            A technical assessment project demonstrating clean code principles. Built on Observer Pattern and Event-Driven architecture in its purest form.
-                        </p>
-                        <div class="flex gap-2 mb-6">
-                            <span class="px-3 py-1 bg-purple-900/50 text-purple-300 border border-purple-700/50 rounded-md text-xs font-semibold">SOLID</span>
-                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 border border-blue-700/50 rounded-md text-xs font-semibold">Unity Events</span>
-                            <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 border border-cyan-700/50 rounded-md text-xs font-semibold">Optimization</span>
-                        </div>
-                        <a href="https://github.com/olcayertasmis/Seat-Away" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline mt-auto">View Repository →</a>
-                    </div>
-                </div>
-
             </div>
         </section>
 
         <section id="other-projects" class="mb-24 scroll-mt-24">
-            <h2 class="text-2xl font-bold mb-8 flex items-center text-gray-300">
-                <span class="w-6 h-1 bg-gray-600 mr-4"></span> Indie Projects & Prototypes
+            <h2 class="text-3xl font-bold mb-10 flex items-center">
+                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Indie Projects & Prototypes
             </h2>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="github-repo-container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <div class="bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative">
-                    <span class="absolute top-4 right-4 text-xs font-bold bg-orange-600 text-white px-2 py-1 rounded">Game Jam</span>
-                    <h3 class="text-lg font-bold text-white mb-2 mt-2">Hell's Nightmare <span class="text-xs font-normal text-gray-500 ml-1">2021</span></h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow">
-                        Developed in 72 hours for <strong>ATOM Jam #2</strong>. Features 2D/2.5D integration, nightmarish loops, and custom C# mechanics. I worked as Coder, Scenarist, and Dubbing artist.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-2 py-1 bg-purple-900/50 text-purple-300 border border-purple-700/50 rounded text-xs font-semibold">C#</span>
-                        <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 border border-cyan-700/50 rounded text-xs font-semibold">Unity</span>
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                    <div class="h-56 overflow-hidden bg-gray-700 relative">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Multiplayer Training" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-indigo-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">Multiplayer / AI</span>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <div class="flex gap-4">
-                            <a href="https://olcayertasmis.itch.io/hells-nightmare" target="_blank" class="text-emerald-400 font-bold text-sm hover:text-emerald-300">Play Itch.io</a>
-                            <a href="https://github.com/olcayertasmis/_GameJam_HellsNightmare" target="_blank" class="text-gray-400 font-bold text-sm hover:text-white">Repo</a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Bridge Race MP Training <span class="text-sm font-normal text-gray-500 ml-2">Jun 2022</span></h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            An advanced iteration of the Bridge Race mechanics, upgraded with full multiplayer support. Implemented an in-game account system using PlayFab, network synchronization via Photon Fusion, intelligent pathfinding via NavMesh, and smooth animations with DOTween.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 border border-indigo-700/50 rounded-md text-xs font-semibold">Photon Fusion</span>
+                            <span class="px-3 py-1 bg-yellow-900/50 text-yellow-300 border border-yellow-700/50 rounded-md text-xs font-semibold">PlayFab</span>
+                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 border border-blue-700/50 rounded-md text-xs font-semibold">NavMesh</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://github.com/olcayertasmis/_Training_NavmeshAndMultiplayer_BridgeRace" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline">View Repository →</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative">
-                    <span class="absolute top-4 right-4 text-xs font-bold bg-blue-600 text-white px-2 py-1 rounded">Published</span>
-                    <h3 class="text-lg font-bold text-white mb-2 mt-2">Ball Blasting <span class="text-xs font-normal text-gray-500 ml-1">2021</span></h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow">
-                        My debut Unity project and first published game on Google Play. I handled the core mechanics and integrated essential SDKs including Leaderboards, Ads, and IAPs.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-2 py-1 bg-pink-900/50 text-pink-300 border border-pink-700/50 rounded text-xs font-semibold">HyperCasual</span>
-                        <span class="px-2 py-1 bg-yellow-900/50 text-yellow-300 border border-yellow-700/50 rounded text-xs font-semibold">SDK Integration</span>
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                    <div class="h-56 overflow-hidden bg-gray-700 relative">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="ATM Rush Clone" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-teal-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">Test Case</span>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <div class="flex gap-4">
-                            <a href="https://play.google.com/store/apps/details?id=com.YacloGames.BallBlasting" target="_blank" class="text-emerald-400 font-bold text-sm hover:text-emerald-300">Play Store →</a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-white">ATM Rush Clone <span class="text-sm font-normal text-gray-500 ml-2">May 2022</span></h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            A reverse-engineering test case prototype of the ATM-Rush game. Developed within a strictly limited timeframe to study and replicate hypercasual core loops, stacking mechanics, and player progression systems.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-pink-900/50 text-pink-300 border border-pink-700/50 rounded-md text-xs font-semibold">HyperCasual</span>
+                            <span class="px-3 py-1 bg-purple-900/50 text-purple-300 border border-purple-700/50 rounded-md text-xs font-semibold">C#</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://github.com/olcayertasmis/_Clone_ATMRush" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline">View Repository →</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative">
-                    <span class="absolute top-4 right-4 text-xs font-bold bg-orange-600 text-white px-2 py-1 rounded">Game Jam</span>
-                    <h3 class="text-lg font-bold text-white mb-2 mt-2">Zindhu <span class="text-xs font-normal text-gray-500 ml-1">2022</span></h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow">
-                        My first experience developing a Hypercasual game, created under strict time limits during a Game Jam. Focused on rapid prototyping and core loop mechanics.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-2 py-1 bg-pink-900/50 text-pink-300 border border-pink-700/50 rounded text-xs font-semibold">HyperCasual</span>
-                        <span class="px-2 py-1 bg-purple-900/50 text-purple-300 border border-purple-700/50 rounded text-xs font-semibold">C#</span>
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                    <div class="h-56 overflow-hidden bg-gray-700 relative">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="Bridge Race Prototype" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-gray-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">Prototype</span>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <div class="flex gap-4">
-                            <a href="https://github.com/olcayertasmis/_GameJam_Zindhu" target="_blank" class="text-gray-400 font-bold text-sm hover:text-white">View Repo</a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Bridge Race Clone <span class="text-sm font-normal text-gray-500 ml-2">Apr 2022</span></h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            A technical prototype inspired by the hit game Bridge Race. Built specifically to experiment with and implement NavMesh pathfinding and AI movement logic.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 border border-blue-700/50 rounded-md text-xs font-semibold">NavMesh</span>
+                            <span class="px-3 py-1 bg-red-900/50 text-red-300 border border-red-700/50 rounded-md text-xs font-semibold">AI Pathfinding</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://github.com/olcayertasmis/_Prototype_BridgeRace" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline">View Repository →</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative">
-                    <span class="absolute top-4 right-4 text-xs font-bold bg-teal-600 text-white px-2 py-1 rounded">Prototype</span>
-                    <h3 class="text-lg font-bold text-white mb-2 mt-2">ATM Rush Clone <span class="text-xs font-normal text-gray-500 ml-1">2022</span></h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow">
-                        A reverse-engineering prototype of the ATM-Rush game. Developed within a limited timeframe to study and replicate hypercasual core loops, stacking mechanics, and player progression.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-2 py-1 bg-pink-900/50 text-pink-300 border border-pink-700/50 rounded text-xs font-semibold">HyperCasual</span>
-                        <span class="px-2 py-1 bg-purple-900/50 text-purple-300 border border-purple-700/50 rounded text-xs font-semibold">C#</span>
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                    <div class="h-56 overflow-hidden bg-gray-700 relative">
+                        <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=800&q=80" alt="Zindhu Game Jam" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-orange-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">Game Jam</span>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <div class="flex gap-4">
-                            <a href="https://github.com/olcayertasmis/_Clone_ATMRush" target="_blank" class="text-gray-400 font-bold text-sm hover:text-white">View Repo</a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Zindhu <span class="text-sm font-normal text-gray-500 ml-2">2022</span></h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            My first experience developing a Hypercasual game, created under strict time limits during a Game Jam. Focused on rapid prototyping and core loop mechanics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-pink-900/50 text-pink-300 border border-pink-700/50 rounded-md text-xs font-semibold">HyperCasual</span>
+                            <span class="px-3 py-1 bg-purple-900/50 text-purple-300 border border-purple-700/50 rounded-md text-xs font-semibold">C#</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://github.com/olcayertasmis/_GameJam_Zindhu" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline">View Repository →</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative">
-                    <span class="absolute top-4 right-4 text-xs font-bold bg-teal-600 text-white px-2 py-1 rounded">Prototype</span>
-                    <h3 class="text-lg font-bold text-white mb-2 mt-2">Bridge Race Clone <span class="text-xs font-normal text-gray-500 ml-1">2022</span></h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow">
-                        A technical prototype inspired by the hit game Bridge Race. Built specifically to experiment with and implement NavMesh pathfinding and AI movement logic.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-2 py-1 bg-blue-900/50 text-blue-300 border border-blue-700/50 rounded text-xs font-semibold">NavMesh</span>
-                        <span class="px-2 py-1 bg-red-900/50 text-red-300 border border-red-700/50 rounded text-xs font-semibold">AI Pathfinding</span>
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                    <div class="h-56 overflow-hidden bg-gray-700 relative">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Hell's Nightmare" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-orange-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">ATOM Jam #2</span>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <div class="flex gap-4">
-                            <a href="https://github.com/olcayertasmis/_Prototype_BridgeRace" target="_blank" class="text-gray-400 font-bold text-sm hover:text-white">View Repo</a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Hell's Nightmare <span class="text-sm font-normal text-gray-500 ml-2">2021</span></h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            Developed in 72 hours. Features 2D/2.5D integration, nightmarish loops, and custom C# mechanics. I worked as Coder, Scenarist, and Dubbing artist.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 border border-cyan-700/50 rounded-md text-xs font-semibold">Unity</span>
+                            <span class="px-3 py-1 bg-purple-900/50 text-purple-300 border border-purple-700/50 rounded-md text-xs font-semibold">C#</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-4">
+                                <a href="https://olcayertasmis.itch.io/hells-nightmare" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline">Play Itch.io</a>
+                                <a href="https://github.com/olcayertasmis/_GameJam_HellsNightmare" target="_blank" class="text-gray-400 font-bold text-sm hover:underline">View Repo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                    <div class="h-56 overflow-hidden bg-gray-700 relative">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="Ball Blasting" class="w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-blue-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">Published</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Ball Blasting <span class="text-sm font-normal text-gray-500 ml-2">2021</span></h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                            My debut Unity project and first published game on Google Play. I handled the core mechanics and integrated essential SDKs including Leaderboards, Ads, and IAPs.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-pink-900/50 text-pink-300 border border-pink-700/50 rounded-md text-xs font-semibold">HyperCasual</span>
+                            <span class="px-3 py-1 bg-yellow-900/50 text-yellow-300 border border-yellow-700/50 rounded-md text-xs font-semibold">SDK Integration</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://play.google.com/store/apps/details?id=com.YacloGames.BallBlasting" target="_blank" class="text-emerald-400 font-bold text-sm hover:underline">Play Store →</a>
                         </div>
                     </div>
                 </div>
