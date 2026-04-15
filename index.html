@@ -182,6 +182,7 @@
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
                 <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
                     <div class="p-8 h-full flex flex-col justify-center">
                         <div class="flex justify-between items-start mb-4">
@@ -228,7 +229,7 @@
                     <div class="h-56 overflow-hidden bg-gray-700 relative">
                         <img src="Images/MyArcadeCenterV2/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="My Arcade Center v2" class="w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-4 left-4 flex gap-2">
-                            <span class="bg-blue-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">100K+ Downloads</span>
+                            <span class="bg-blue-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">500K+ Downloads</span>
                             <span class="bg-gray-800/80 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-emerald-400 border border-gray-600">GamesMrkt</span>
                         </div>
                     </div>
@@ -546,7 +547,7 @@
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/MagaraJam/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Magara Jam">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Magara Jam #5 <span class="text-xs font-normal text-gray-500 ml-1">Sep 2022</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1">Magara Jam #5 (Spite) <span class="text-xs font-normal text-gray-500 ml-1">Sep 2022</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Rapidly developed entry for Mağara Game Jam.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
                         <button onclick="openModal('modal-magarajam')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
@@ -673,7 +674,7 @@
                 title: "My Arcade Center",
                 subtitle: "Idle Arcade | 1M+ Downloads | $1M+ Revenue",
                 desc: "A highly successful idle arcade game. I implemented Akedo Map Tool, server-based JSON configurations, and Satori Feature Flags. Utilizing Nakama backend, I focused on optimized code for mobile performance and managed WebGL publication.",
-                videoUrl: "", 
+                videoUrl: "https://www.youtube.com/embed/R4uwgcrIo1Q", 
                 links: `<a href="https://play.google.com/store/apps/details?id=com.gamesmrkt.arcadecenter&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store</a>
                         <a href="https://apps.apple.com/cy/app/my-arcade-center/id6449451200?l=tr" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm">App Store</a>
                         <a href="https://html5.gamedistribution.com/1ae5b8b1590c4119bb5163d98b51be2c/" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm">Play WebGL</a>`,
@@ -683,7 +684,7 @@
                 title: "My Arcade Center v2",
                 subtitle: "Idle Arcade | 500K+ Downloads",
                 desc: "The sequel to My Arcade Center. Built upon a refined architecture with expanded management mechanics and deeper economy systems.",
-                videoUrl: "", 
+                videoUrl: "https://www.youtube.com/embed/xHoydxc-O58", 
                 links: `<a href="https://play.google.com/store/apps/details?id=com.kyosointeractive.myac2&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store</a>
                         <a href="https://apps.apple.com/cy/app/my-arcade-center-v2/id6503872496?l=tr" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm">App Store</a>`,
                 images: ["Images/MyArcadeCenterV2/ss1.jpg", "Images/MyArcadeCenterV2/ss2.jpg"]
@@ -743,10 +744,10 @@
                 images: ["Images/Match3/ss1.jpg"]
             },
             'modal-shooter': {
-                title: "Shooter Game (Spite)",
+                title: "Shooter Game",
                 subtitle: "Prototype | Aug 2023",
                 desc: "Fast-paced prototype focusing on gunplay mechanics, projectile physics, and responsive camera controls.",
-                videoUrl: "https://www.youtube.com/embed/cufy0jVbPRc", 
+                videoUrl: "", 
                 links: `<a href="https://github.com/olcayertasmis/Shooter_Game" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
                 images: ["Images/ShooterGame/ss1.jpg"]
             },
@@ -841,10 +842,11 @@
                 images: ["Images/RTSMechanics/ss1.jpg"]
             },
             'modal-magarajam': {
-                title: "Magara Jam #5",
+                title: "Magara Jam #5 (Spite)",
                 subtitle: "Game Jam | Sep 2022",
                 desc: "Entry for Mağara Game Jam.",
-                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/_GameJam_MagaraGameJam5" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                videoUrl: "https://www.youtube.com/embed/cufy0jVbPRc", 
+                links: `<a href="https://github.com/olcayertasmis/_GameJam_MagaraGameJam5" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
                 images: ["Images/MagaraJam/ss1.jpg"]
             },
             'modal-bridgemp': {
@@ -891,7 +893,8 @@
                 title: "Hell's Nightmare",
                 subtitle: "Game Jam | Feb 2022",
                 desc: "Developed in 72 hours. Features 2D/2.5D integration.",
-                videoUrl: "", links: `<a href="https://olcayertasmis.itch.io/hells-nightmare" target="_blank" class="text-emerald-400 font-bold hover:underline mr-4">Play Itch.io</a> <a href="https://github.com/olcayertasmis/_GameJam_HellsNightmare" target="_blank" class="text-gray-400 font-bold hover:text-white">Repo</a>`,
+                videoUrl: "", 
+                links: `<a href="https://olcayertasmis.itch.io/hells-nightmare" target="_blank" class="text-emerald-400 font-bold hover:underline mr-4">Play Itch.io</a> <a href="https://github.com/olcayertasmis/_GameJam_HellsNightmare" target="_blank" class="text-gray-400 font-bold hover:text-white">Repo</a>`,
                 images: ["Images/HellsNightmare/ss1.jpg"]
             }
         };
@@ -907,6 +910,7 @@
             document.getElementById('modal-subtitle').innerText = data.subtitle;
             document.getElementById('modal-desc').innerText = data.desc;
             document.getElementById('modal-links').innerHTML = data.links;
+            
             const videoContainer = document.getElementById('modal-video-container');
             const videoIframe = document.getElementById('modal-video');
             if(data.videoUrl && data.videoUrl !== "") {
@@ -916,6 +920,7 @@
                 videoIframe.src = "";
                 videoContainer.classList.add('hidden');
             }
+            
             const gallery = document.getElementById('modal-gallery');
             gallery.innerHTML = "";
             currentLightboxImages = data.images;
