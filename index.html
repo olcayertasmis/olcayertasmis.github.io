@@ -83,6 +83,11 @@
                     </div>
                     <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed">
                         <p>Developed virtual environments for Occupational Health and Safety. Designed realistic 3D virtual environments and implemented complex scenario logic utilizing <strong>Unity</strong>, allowing users to navigate and identify hazardous situations in a controlled digital space.</p>
+                        <div class="mt-4">
+                            <button onclick="openModal('modal-egerobot')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer text-white">
+                                View Project Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -184,27 +189,6 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
-                    <div class="p-8 h-full flex flex-col justify-center">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <span class="text-emerald-500 text-xs font-black tracking-widest uppercase">Technical Case</span>
-                                <h3 class="text-2xl font-bold text-white mt-1">Seat Away <span class="text-sm font-normal text-gray-500 ml-2">Apr 2026</span></h3>
-                            </div>
-                            <span class="bg-gray-700 p-2 rounded-lg text-sm">🧩</span>
-                        </div>
-                        <p class="text-gray-400 mb-6 text-sm">
-                            My latest technical assessment project demonstrating clean code principles. Built on Observer Pattern and Event-Driven architecture in its purest form.
-                        </p>
-                        <div class="flex gap-2 mb-6">
-                            <span class="px-3 py-1 bg-purple-900/50 text-purple-300 border border-purple-700/50 rounded-md text-xs font-semibold">SOLID</span>
-                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 border border-blue-700/50 rounded-md text-xs font-semibold">Unity Events</span>
-                            <span class="px-3 py-1 bg-cyan-900/50 text-cyan-300 border border-cyan-700/50 rounded-md text-xs font-semibold">Optimization</span>
-                        </div>
-                        <span class="text-gray-500 font-bold text-sm mt-auto">Private Repository</span>
-                    </div>
-                </div>
-
-                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
                     <div class="h-56 overflow-hidden bg-gray-700 relative">
                         <img src="Images/MyArcadeCenterV2/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="My Arcade Center v2" class="w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-4 left-4 flex gap-2">
@@ -240,27 +224,6 @@
                         </p>
                         <div class="flex items-center justify-between">
                             <button onclick="openModal('modal-arcade')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
-                    <div class="h-56 overflow-hidden bg-gray-700 relative">
-                        <img src="Images/Egerobot/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="Occupational Safety Simulation" class="w-full h-full object-cover transition-transform duration-500">
-                        <div class="absolute top-4 left-4 flex gap-2">
-                            <span class="bg-purple-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-white">Simulation</span>
-                            <span class="bg-gray-800/80 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider text-emerald-400 border border-gray-600">Egerobot</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-white">Occupational Safety Sim <span class="text-sm font-normal text-gray-500 ml-2">2023</span></h3>
-                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">
-                            3D simulation for Occupational Health and Safety training, featuring realistic virtual environments and scenario logic.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <button onclick="openModal('modal-egerobot')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
                                 View Details
                             </button>
                         </div>
@@ -317,6 +280,19 @@
             </h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                    <span class="absolute top-4 right-4 text-xs font-bold bg-teal-600 text-white px-2 py-1 rounded z-10 shadow-sm">Test Case</span>
+                    <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
+                        <img src="Images/SeatAway/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Seat Away">
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Seat Away <span class="text-xs font-normal text-gray-500 ml-1">Apr 2026</span></h3>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow">Technical assessment project demonstrating clean code principles. Built on Observer Pattern and Event-Driven architecture.</p>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
+                        <button onclick="openModal('modal-seataway')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                    </div>
+                </div>
+
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
                     <span class="absolute top-4 right-4 text-xs font-bold bg-emerald-600 text-white px-2 py-1 rounded z-10 shadow-sm">Freelance</span>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
@@ -402,6 +378,18 @@
                 </div>
 
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                    <span class="absolute top-4 right-4 text-xs font-bold bg-blue-600 text-white px-2 py-1 rounded z-10 shadow-sm">Published</span>
+                    <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
+                        <img src="Images/PaintHit/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="PaintHit">
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">PaintHit <span class="text-xs font-normal text-gray-500 ml-1">Jul 2023</span></h3>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow">A colorful, addictive hypercasual game officially published on the Google Play Store under Yaclo Games.</p>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
+                        <button onclick="openModal('modal-painthit')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
                     <span class="absolute top-4 right-4 text-xs font-bold bg-indigo-600 text-white px-2 py-1 rounded z-10 shadow-sm">Bootcamp</span>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/BootcampU46/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bootcamp">
@@ -450,6 +438,18 @@
                 </div>
 
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                    <span class="absolute top-4 right-4 text-xs font-bold bg-indigo-600 text-white px-2 py-1 rounded z-10 shadow-sm">Completed</span>
+                    <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
+                        <img src="Images/ZigZagClone/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="ZigZag">
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">ZigZag Clone <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow">A fully completed endless runner game, analytical rebuild of procedural path generation.</p>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
+                        <button onclick="openModal('modal-zigzag')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
                     <span class="absolute top-4 right-4 text-xs font-bold bg-orange-600 text-white px-2 py-1 rounded z-10 shadow-sm">Game Jam</span>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/SoftIToJam/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="SoftIto Jam">
@@ -470,18 +470,6 @@
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Classic 2D/3D platformer prototype with state machines.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
                         <button onclick="openModal('modal-myplatform')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
-                    </div>
-                </div>
-
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
-                    <span class="absolute top-4 right-4 text-xs font-bold bg-gray-600 text-white px-2 py-1 rounded z-10 shadow-sm">Prototype</span>
-                    <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
-                        <img src="Images/ZigZagClone/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="ZigZag">
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-1">ZigZag Clone <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow">Analytical rebuild of procedural path generation.</p>
-                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-zigzag')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
                     </div>
                 </div>
 
@@ -665,9 +653,17 @@
                 title: "Occupational Safety Simulation",
                 subtitle: "Internship Project | 2023",
                 desc: "Developed during my internship at Egerobot, a company specializing in VR/AR technologies. I built a 3D simulation specifically for Occupational Health and Safety training. I designed realistic virtual environments and implemented scenario logic using Unity, allowing users to navigate and identify hazardous situations in a controlled digital space.",
-                videoUrl: "",
+                videoUrl: "https://www.youtube.com/embed/rVEOeyOwWmY",
                 links: ``,
-                images: ["Images/Egerobot/ss1.jpg"]
+                images: []
+            },
+            'modal-seataway': {
+                title: "Seat Away",
+                subtitle: "Technical Case | Apr 2026",
+                desc: "My latest technical assessment project demonstrating clean code principles. Built on Observer Pattern and Event-Driven architecture in its purest form.",
+                videoUrl: "",
+                links: `<a href="https://github.com/olcayertasmis/Seat-Away" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                images: ["Images/SeatAway/ss1.jpg", "Images/SeatAway/ss2.jpg", "Images/SeatAway/ss3.jpg", "Images/SeatAway/ss4.jpg", "Images/SeatAway/ss5.jpg"]
             },
             'modal-arcade': {
                 title: "My Arcade Center",
@@ -677,7 +673,7 @@
                 links: `<a href="https://play.google.com/store/apps/details?id=com.gamesmrkt.arcadecenter&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store</a>
                         <a href="https://apps.apple.com/cy/app/my-arcade-center/id6449451200?l=tr" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm">App Store</a>
                         <a href="https://html5.gamedistribution.com/1ae5b8b1590c4119bb5163d98b51be2c/" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm">Play WebGL</a>`,
-                images: ["Images/MyArcadeCenter/ss1.jpg", "Images/MyArcadeCenter/ss2.jpg", "Images/MyArcadeCenter/ss3.jpg"]
+                images: ["Images/MyArcadeCenter/ss1.jpg", "Images/MyArcadeCenter/ss2.jpg", "Images/MyArcadeCenter/ss3.jpg", "Images/MyArcadeCenter/ss4.jpg", "Images/MyArcadeCenter/ss5.jpg", "Images/MyArcadeCenter/ss6.jpg", "Images/MyArcadeCenter/ss7.jpg"]
             },
             'modal-arcadev2': {
                 title: "My Arcade Center v2",
@@ -686,7 +682,7 @@
                 videoUrl: "https://www.youtube.com/embed/xHoydxc-O58", 
                 links: `<a href="https://play.google.com/store/apps/details?id=com.kyosointeractive.myac2&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store</a>
                         <a href="https://apps.apple.com/cy/app/my-arcade-center-v2/id6503872496?l=tr" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm">App Store</a>`,
-                images: ["Images/MyArcadeCenterV2/ss1.jpg", "Images/MyArcadeCenterV2/ss2.jpg"]
+                images: ["Images/MyArcadeCenterV2/ss1.jpg", "Images/MyArcadeCenterV2/ss2.jpg", "Images/MyArcadeCenterV2/ss3.jpg", "Images/MyArcadeCenterV2/ss4.jpg", "Images/MyArcadeCenterV2/ss5.jpg", "Images/MyArcadeCenterV2/ss6.jpg"]
             },
             'modal-painthit': {
                 title: "PaintHit",
@@ -694,7 +690,7 @@
                 desc: "A colorful, addictive hypercasual game officially published on the Google Play Store under Yaclo Games.",
                 videoUrl: "https://www.youtube.com/embed/3OceXgpoPoQ",
                 links: `<a href="https://play.google.com/store/apps/details?id=com.YacloGames.PaintHit" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store →</a>`,
-                images: ["Images/PaintHit/ss1.jpg", "Images/PaintHit/ss2.jpg"]
+                images: ["Images/PaintHit/ss1.jpg"]
             },
             'modal-ballblasting': {
                 title: "Ball Blasting",
@@ -702,7 +698,7 @@
                 desc: "My debut Unity project and first published game on Google Play. I handled the core mechanics and integrated essential SDKs including Leaderboards, Ads, and IAPs.",
                 videoUrl: "https://www.youtube.com/embed/O5gtg4Hd1Ms",
                 links: `<a href="https://play.google.com/store/apps/details?id=com.YacloGames.BallBlasting" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store →</a>`,
-                images: ["Images/BallBlasting/ss1.jpg", "Images/BallBlasting/ss2.jpg"]
+                images: ["Images/BallBlasting/ss1.jpg", "Images/BallBlasting/ss2.jpg", "Images/BallBlasting/ss3.jpg", "Images/BallBlasting/ss4.jpg"]
             },
             'modal-planet': {
                 title: "Planet Explorer",
@@ -716,7 +712,9 @@
                 title: "Yolleliho",
                 subtitle: "Freelance Project | Nov 2025",
                 desc: "Commercial freelance project delivered to a client, involving full-cycle game development and mechanics implementation.",
-                videoUrl: "", links: ``, images: ["Images/Yolleliho/ss1.jpg"]
+                videoUrl: "https://www.youtube.com/embed/d7g45Rk1nH0", 
+                links: ``, 
+                images: ["Images/Yolleliho/ss1.jpg"]
             },
             'modal-hexaclash': {
                 title: "HexaClash Prototype",
@@ -724,7 +722,7 @@
                 desc: "Fast-paced test case project focusing on Hex grid mechanics and dynamic interactions.",
                 videoUrl: "https://www.youtube.com/embed/KIkkipNMcUE", 
                 links: `<a href="https://github.com/olcayertasmis/Prototype_HexaClash" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/HexaClash/ss1.jpg"]
+                images: []
             },
             'modal-minifarm': {
                 title: "MiniFarm",
@@ -740,7 +738,7 @@
                 desc: "The official test case that secured my position at GamesMrkt. Focuses on array manipulation, pooling, and core puzzle mechanics.",
                 videoUrl: "https://www.youtube.com/embed/oMUVn1l88kM", 
                 links: `<a href="https://github.com/olcayertasmis/Match-3" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/Match3/ss1.jpg"]
+                images: []
             },
             'modal-shooter': {
                 title: "Shooter Game",
@@ -748,21 +746,21 @@
                 desc: "Fast-paced prototype focusing on gunplay mechanics, projectile physics, and responsive camera controls.",
                 videoUrl: "", 
                 links: `<a href="https://github.com/olcayertasmis/Shooter_Game" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/ShooterGame/ss1.jpg"]
+                images: []
             },
             'modal-oopgold': {
                 title: "OOP Gold Collect",
                 subtitle: "Prototype | Aug 2023",
                 desc: "Focused on Object-Oriented Programming principles, interfaces and inheritance.",
                 videoUrl: "", links: `<a href="https://github.com/olcayertasmis/OOP_Project_GoldCollect" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/OOPGoldCollect/ss1.jpg"]
+                images: []
             },
             'modal-geodash': {
                 title: "Geo Dash Clone",
                 subtitle: "Test Case | Aug 2023",
                 desc: "Technical assessment replicating rhythm-based physics and level scrolling of Geometry Dash.",
                 videoUrl: "", links: `<a href="https://github.com/olcayertasmis/Geometry-Dash-Lite-Clone" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/GeoDashClone/ss1.jpg"]
+                images: []
             },
             'modal-bootcamp': {
                 title: "Bootcamp U46",
@@ -770,21 +768,21 @@
                 desc: "Project developed collaboratively during an intensive game development bootcamp.",
                 videoUrl: "https://www.youtube.com/embed/5I9AundyaTs", 
                 links: `<a href="https://github.com/olcayertasmis/BootcampU46" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/BootcampU46/ss1.jpg"]
+                images: ["Images/BootcampU46/ss1.jpg", "Images/BootcampU46/ss2.jpg", "Images/BootcampU46/ss3.jpg", "Images/BootcampU46/ss4.jpg", "Images/BootcampU46/ss5.jpg", "Images/BootcampU46/ss6.jpg", "Images/BootcampU46/ss7.jpg", "Images/BootcampU46/ss8.jpg", "Images/BootcampU46/ss9.jpg", "Images/BootcampU46/ss10.jpg"]
             },
             'modal-fishmaster': {
                 title: "The Fish Master",
                 subtitle: "Prototype | Jun 2023",
                 desc: "Physics prototype featuring fishing mechanics and line tension algorithms.",
                 videoUrl: "", links: `<a href="https://github.com/olcayertasmis/The-Fish-Master" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/FishMaster/ss1.jpg"]
+                images: []
             },
             'modal-netcode': {
                 title: "Netcode Project",
                 subtitle: "Multiplayer | May 2023",
                 desc: "Exploration into Unity's Netcode for GameObjects (NGO).",
                 videoUrl: "", links: `<a href="https://github.com/olcayertasmis/Netcode-First-Project" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/NetcodeProject/ss1.jpg"]
+                images: []
             },
             'modal-colorchange': {
                 title: "ColorChange",
@@ -792,7 +790,7 @@
                 desc: "Hypercasual prototype focused on color-matching logic.",
                 videoUrl: "https://www.youtube.com/embed/ai4cB-pCqfA", 
                 links: `<a href="https://github.com/olcayertasmis/ColorChange" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/ColorChange/ss1.jpg"]
+                images: ["Images/ColorChange/ss1.jpg", "Images/ColorChange/ss2.jpg"]
             },
             'modal-jamsoftito': {
                 title: "SoftITo Jam Game",
@@ -800,7 +798,7 @@
                 desc: "Developed during the SoftITo Academy Game Jam.",
                 videoUrl: "https://www.youtube.com/embed/KoyCRIkC7iI", 
                 links: `<a href="https://github.com/olcayertasmis/JamSoftIto" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/SoftIToJam/ss1.jpg"]
+                images: []
             },
             'modal-myplatform': {
                 title: "MyPlatform",
@@ -808,11 +806,11 @@
                 desc: "2D/3D platformer prototype designed to perfect jump arcs.",
                 videoUrl: "https://www.youtube.com/embed/vXDnzyDl0dI", 
                 links: `<a href="https://github.com/olcayertasmis/MyPlatform" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/MyPlatform/ss1.jpg"]
+                images: []
             },
             'modal-zigzag': {
                 title: "ZigZag Clone",
-                subtitle: "Prototype | May 2023",
+                subtitle: "Indie Game | May 2023",
                 desc: "Analytical rebuild of procedural path generation.",
                 videoUrl: "https://www.youtube.com/embed/yJQWyd2L6yo", 
                 links: `<a href="https://github.com/olcayertasmis/ZigZagGame" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
@@ -823,7 +821,7 @@
                 subtitle: "AR Project | Jan 2023",
                 desc: "AR educational app combining 3D medical visualization.",
                 videoUrl: "", links: `<a href="https://github.com/olcayertasmis/_AR-Project_MedicineAndQuiz" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/ARMedQuiz/ss1.jpg"]
+                images: ["Images/ARMedQuiz/ss1.jpg", "Images/ARMedQuiz/ss2.jpg", "Images/ARMedQuiz/ss3.jpg", "Images/ARMedQuiz/ss4.jpg"]
             },
             'modal-countmasters': {
                 title: "CountMasters",
@@ -831,14 +829,14 @@
                 desc: "Crowd-control mechanics and math-gate logic study.",
                 videoUrl: "https://www.youtube.com/embed/VodMbgJ_M94", 
                 links: `<a href="https://github.com/olcayertasmis/_Prototype_CountMasters" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/CountMasters/ss1.jpg"]
+                images: []
             },
             'modal-rts': {
                 title: "RTS Mechanics",
                 subtitle: "Training | Nov 2022",
                 desc: "Unit selection and agent commanding ground.",
                 videoUrl: "", links: `<a href="https://github.com/olcayertasmis/_Training_RTS-Game" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/RTSMechanics/ss1.jpg"]
+                images: []
             },
             'modal-magarajam': {
                 title: "Magara Jam #5 (Spite)",
@@ -846,13 +844,13 @@
                 desc: "Entry for Mağara Game Jam.",
                 videoUrl: "https://www.youtube.com/embed/cufy0jVbPRc", 
                 links: `<a href="https://github.com/olcayertasmis/_GameJam_MagaraGameJam5" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/MagaraJam/ss1.jpg"]
+                images: ["Images/MagaraJam/ss1.jpg", "Images/MagaraJam/ss2.jpg", "Images/MagaraJam/ss3.jpg", "Images/MagaraJam/ss4.jpg", "Images/MagaraJam/ss5.jpg"]
             },
             'modal-savethebaby': {
                 title: "Save The Baby",
                 subtitle: "Prototype | Jul 2022",
                 desc: "A prototype project focused on core gameplay mechanics and physics interactions.",
-                videoUrl: "", links: ``, images: ["Images/SaveTheBaby/ss1.jpg"]
+                videoUrl: "", links: ``, images: []
             },
             'modal-bridgemp': {
                 title: "Bridge Race MP",
@@ -860,7 +858,7 @@
                 desc: "Integrated with PlayFab and Photon Fusion.",
                 videoUrl: "https://www.youtube.com/embed/RZgNY9dcobY", 
                 links: `<a href="https://github.com/olcayertasmis/_Training_NavmeshAndMultiplayer_BridgeRace" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/BridgeRaceMP/ss1.jpg"]
+                images: ["Images/BridgeRaceMP/ss1.jpg", "Images/BridgeRaceMP/ss2.jpg"]
             },
             'modal-atmrush': {
                 title: "ATM Rush Clone",
@@ -868,7 +866,7 @@
                 desc: "Reverse-engineering test case prototype of stacking.",
                 videoUrl: "https://www.youtube.com/embed/YJM_L5wyTB4", 
                 links: `<a href="https://github.com/olcayertasmis/_Clone_ATMRush" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/ATMRushClone/ss1.jpg"]
+                images: []
             },
             'modal-throwing': {
                 title: "Throwing Proto",
@@ -876,7 +874,7 @@
                 desc: "Internship assessment utilizing parabolic trajectories.",
                 videoUrl: "https://www.youtube.com/embed/cu0maG8pXwI", 
                 links: `<a href="https://github.com/olcayertasmis/_Prototype_Throwing" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/ThrowingProto/ss1.jpg"]
+                images: []
             },
             'modal-bridgerace': {
                 title: "Bridge Race Proto",
@@ -884,7 +882,7 @@
                 desc: "Technical prototype for NavMesh logic.",
                 videoUrl: "https://www.youtube.com/embed/pTlFmJznF_o", 
                 links: `<a href="https://github.com/olcayertasmis/_Prototype_BridgeRace" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/BridgeRaceProto/ss1.jpg"]
+                images: []
             },
             'modal-zindhu': {
                 title: "Zindhu",
@@ -892,7 +890,7 @@
                 desc: "Hypercasual game developed during a Jam.",
                 videoUrl: "https://www.youtube.com/embed/SBae8f11giQ", 
                 links: `<a href="https://github.com/olcayertasmis/_GameJam_Zindhu" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
-                images: ["Images/Zindhu/ss1.jpg"]
+                images: []
             },
             'modal-hellsnightmare': {
                 title: "Hell's Nightmare",
@@ -900,7 +898,7 @@
                 desc: "Developed in 72 hours. Features 2D/2.5D integration.",
                 videoUrl: "https://www.youtube.com/embed/9LWzgbmqiCE", 
                 links: `<a href="https://olcayertasmis.itch.io/hells-nightmare" target="_blank" class="text-emerald-400 font-bold hover:underline mr-4">Play Itch.io</a> <a href="https://github.com/olcayertasmis/_GameJam_HellsNightmare" target="_blank" class="text-gray-400 font-bold hover:text-white">Repo</a>`,
-                images: ["Images/HellsNightmare/ss1.jpg"]
+                images: ["Images/HellsNightmare/ss1.jpg", "Images/HellsNightmare/ss2.jpg", "Images/HellsNightmare/ss3.jpg", "Images/HellsNightmare/ss4.jpg", "Images/HellsNightmare/ss5.jpg", "Images/HellsNightmare/ss6.jpg", "Images/HellsNightmare/ss7.jpg"]
             }
         };
 
