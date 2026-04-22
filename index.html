@@ -8,38 +8,59 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #111827; }
+        
+        .project-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .project-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.3); 
+            border-color: rgba(16, 185, 129, 0.5);
+        }
         .project-card:hover img { transform: scale(1.05); }
         .cert-card:hover img { transform: scale(1.05); }
         body.modal-open { overflow: hidden; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .glitch-hover { position: relative; display: inline-block; transition: color 0.2s; }
+        .glitch-hover:hover { color: #34d399; text-shadow: 2px 2px 0px rgba(255,0,0,0.5), -2px -2px 0px rgba(0,255,255,0.5); }
+
+        .typing-container { display: inline-block; overflow: hidden; white-space: nowrap; border-right: 3px solid #34d399; animation: typing 1.5s steps(20, end), blink-caret .75s step-end infinite; }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #34d399; } }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen">
+<body class="bg-gray-900 text-gray-100 min-h-screen relative">
 
-    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md border-b border-gray-800 z-40">
+    <canvas id="particle-canvas" class="fixed inset-0 z-0 pointer-events-none opacity-40"></canvas>
+
+    <nav class="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg border-b border-gray-800 z-40 transition-all duration-300">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="font-bold text-emerald-400 tracking-wider">OLCAY ERTAŞMIŞ</span>
             <div class="space-x-6 text-sm font-semibold hidden md:block">
-                <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
-                <a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
-                <a href="#education" class="text-gray-400 hover:text-white transition-colors">Education & Certificates</a>
-                <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
-                <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                <a href="#about" class="text-gray-400 hover:text-emerald-400 transition-colors">About</a>
+                <a href="#experience" class="text-gray-400 hover:text-emerald-400 transition-colors">Experience</a>
+                <a href="#education" class="text-gray-400 hover:text-emerald-400 transition-colors">Education & Certificates</a>
+                <a href="#projects" class="text-gray-400 hover:text-emerald-400 transition-colors">Projects</a>
+                <a href="#contact" class="text-gray-400 hover:text-emerald-400 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-5xl mx-auto px-6 pt-32 pb-12">
+    <div class="max-w-5xl mx-auto px-6 pt-32 pb-12 relative z-10">
         
-        <section id="about" class="text-center mb-24 pt-10">
-            <h1 class="text-6xl font-extrabold tracking-tighter mb-4 text-white">OLCAY ERTAŞMIŞ</h1>
-            <p class="text-2xl text-emerald-400 font-medium mb-6">Game Developer</p>
-            <div class="flex flex-wrap justify-center gap-3 mb-8">
-                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">Unity</span>
-                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">C#</span>
-                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">Clean Architecture</span>
-                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">System Design</span>
-                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 rounded-full text-sm font-semibold text-emerald-400">Backend Integration</span>
+        <section id="about" class="text-center mb-32 pt-10 reveal active">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-4 text-white cursor-default glitch-hover">OLCAY ERTAŞMIŞ</h1>
+            <div class="mb-8">
+                <span class="text-2xl md:text-3xl text-emerald-400 font-medium typing-container">Game Developer</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 hover:border-emerald-500 rounded-full text-sm font-semibold text-emerald-400 transition-colors cursor-default">Unity</span>
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 hover:border-emerald-500 rounded-full text-sm font-semibold text-emerald-400 transition-colors cursor-default">C#</span>
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 hover:border-emerald-500 rounded-full text-sm font-semibold text-emerald-400 transition-colors cursor-default">Clean Architecture</span>
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 hover:border-emerald-500 rounded-full text-sm font-semibold text-emerald-400 transition-colors cursor-default">System Design</span>
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700 hover:border-emerald-500 rounded-full text-sm font-semibold text-emerald-400 transition-colors cursor-default">Backend Integration</span>
             </div>
             <div class="text-gray-400 max-w-3xl mx-auto leading-relaxed text-lg space-y-4">
                 <p>
@@ -54,17 +75,23 @@
             </div>
         </section>
 
-        <section id="experience" class="mb-24 scroll-mt-24">
-            <h2 class="text-3xl font-bold mb-10 flex items-center">
-                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Experience
+        <section id="experience" class="mb-32 scroll-mt-24 reveal">
+            <h2 class="text-3xl font-bold mb-12 flex items-center">
+                <span class="w-8 h-1 bg-emerald-500 mr-4 rounded-full"></span> Experience
             </h2>
             
             <div class="space-y-8">
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
-                    <div class="w-full md:w-1/3">
-                        <h3 class="text-2xl font-bold text-white mb-1">GamesMrkt</h3>
-                        <p class="text-emerald-400 text-base font-semibold">Game Developer</p>
-                        <p class="text-sm text-gray-500 mt-2">2023 - 2025 <span class="text-emerald-500 font-medium ml-1">(2 years 2 months)</span></p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg hover:border-gray-500 transition-colors">
+                    <div class="w-full md:w-1/3 flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xl text-emerald-400 overflow-hidden shrink-0 shadow-inner">
+                            <img src="Images/Logos/gamesmrkt.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-cover">
+                            <span style="display:none;">GM</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">GamesMrkt</h3>
+                            <p class="text-emerald-400 text-base font-semibold">Game Developer</p>
+                            <p class="text-sm text-gray-500 mt-1">2023 - 2025 <span class="text-emerald-500/70 font-medium ml-1">(2 yrs 2 mos)</span></p>
+                        </div>
                     </div>
                     <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed space-y-3">
                         <p>I worked on various internal prototypes, but my primary focus and major achievements were centered around two highly successful live mobile games:</p>
@@ -75,33 +102,51 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
-                    <div class="w-full md:w-1/3">
-                        <h3 class="text-2xl font-bold text-white mb-1">Egerobot</h3>
-                        <p class="text-emerald-400 text-base font-semibold">Unity VR/AR Intern</p>
-                        <p class="text-sm text-gray-500 mt-2">2023 (4 months)</p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg hover:border-gray-500 transition-colors">
+                    <div class="w-full md:w-1/3 flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xl text-emerald-400 overflow-hidden shrink-0 shadow-inner">
+                            <img src="Images/Logos/egerobot.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-cover">
+                            <span style="display:none;">ER</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Egerobot</h3>
+                            <p class="text-emerald-400 text-base font-semibold">Unity VR/AR Intern</p>
+                            <p class="text-sm text-gray-500 mt-1">2023 (4 months)</p>
+                        </div>
                     </div>
                     <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed">
                         <p>Developed virtual environments for Occupational Health and Safety. Designed realistic 3D virtual environments and implemented complex scenario logic utilizing <strong>Unity</strong>, allowing users to navigate and identify hazardous situations in a controlled digital space.</p>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
-                    <div class="w-full md:w-1/3">
-                        <h3 class="text-2xl font-bold text-white mb-1">Omicron Game</h3>
-                        <p class="text-emerald-400 text-base font-semibold">Game Developer Intern</p>
-                        <p class="text-sm text-gray-500 mt-2">2022 (2 months)</p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg hover:border-gray-500 transition-colors">
+                    <div class="w-full md:w-1/3 flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xl text-emerald-400 overflow-hidden shrink-0 shadow-inner">
+                            <img src="Images/Logos/omicron.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-cover">
+                            <span style="display:none;">OG</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Omicron Game</h3>
+                            <p class="text-emerald-400 text-base font-semibold">Game Developer Intern</p>
+                            <p class="text-sm text-gray-500 mt-1">2022 (2 months)</p>
+                        </div>
                     </div>
                     <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed">
                         <p>Developed the 3D mobile game "Planet Explorer" from scratch. Handled the entire development process, including the implementation of character movement, trap mechanics, enemy AI logic, and the User Interface.</p>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
-                    <div class="w-full md:w-1/3">
-                        <h3 class="text-2xl font-bold text-white mb-1">Yaclo Games</h3>
-                        <p class="text-emerald-400 text-base font-semibold">Freelance & Indie Developer</p>
-                        <p class="text-sm text-gray-500 mt-2">Jan 2021 - Present</p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg hover:border-gray-500 transition-colors">
+                    <div class="w-full md:w-1/3 flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xl text-emerald-400 overflow-hidden shrink-0 shadow-inner">
+                            <img src="Images/Logos/yaclo.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-cover">
+                            <span style="display:none;">YG</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Yaclo Games</h3>
+                            <p class="text-emerald-400 text-base font-semibold">Freelance & Indie Dev</p>
+                            <p class="text-sm text-gray-500 mt-1">Jan 2021 - Present</p>
+                        </div>
                     </div>
                     <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed space-y-3">
                         <p>Under the personal brand Yaclo Games, I both developed and published independent projects on the Google Play Store and provided freelance game development solutions for various clients.</p>
@@ -113,16 +158,22 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
-                    <div class="w-full md:w-1/3">
-                        <h3 class="text-2xl font-bold text-white mb-1">Hunel Games</h3>
-                        <p class="text-emerald-400 text-base font-semibold">Game Tester</p>
-                        <p class="text-sm text-gray-500 mt-2">2020 - 2022</p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg hover:border-gray-500 transition-colors">
+                    <div class="w-full md:w-1/3 flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xl text-emerald-400 overflow-hidden shrink-0 shadow-inner">
+                            <img src="Images/Logos/hunel.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-cover">
+                            <span style="display:none;">HG</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Hunel Games</h3>
+                            <p class="text-emerald-400 text-base font-semibold">Game Tester</p>
+                            <p class="text-sm text-gray-500 mt-1">2020 - 2022</p>
+                        </div>
                     </div>
                     <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed">
                         <p>Involved in Quality Assurance processes. Created test teams, led testing operations, executed detailed testing of in-game mechanics, identified bugs, and contributed to overall game stability and user experience improvements.</p>
                         <div class="mt-4">
-                            <button onclick="openModal('modal-hunel')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer text-white">
+                            <button onclick="openModal('modal-hunel')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer text-white shadow-sm hover:shadow-emerald-500/20">
                                 View Tested Projects
                             </button>
                         </div>
@@ -131,17 +182,23 @@
             </div>
         </section>
 
-        <section id="education" class="mb-24 scroll-mt-24">
-            <h2 class="text-3xl font-bold mb-10 flex items-center">
-                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Education & Certificates
+        <section id="education" class="mb-32 scroll-mt-24 reveal">
+            <h2 class="text-3xl font-bold mb-12 flex items-center">
+                <span class="w-8 h-1 bg-emerald-500 mr-4 rounded-full"></span> Education & Certificates
             </h2>
             
             <div class="space-y-8">
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg">
-                    <div class="w-full md:w-1/3">
-                        <h3 class="text-2xl font-bold text-white mb-1">Kastamonu University</h3>
-                        <p class="text-emerald-400 text-base font-semibold">Bachelor's Degree - Computer Engineering</p>
-                        <p class="text-sm text-gray-500 mt-2">2019 - 2023 | <span class="text-emerald-400 font-bold">GPA: 3.17</span></p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start shadow-lg hover:border-gray-500 transition-colors">
+                    <div class="w-full md:w-1/3 flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xl text-emerald-400 overflow-hidden shrink-0 shadow-inner">
+                            <img src="Images/Logos/kastamonu.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-cover">
+                            <span style="display:none;">KU</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Kastamonu University</h3>
+                            <p class="text-emerald-400 text-base font-semibold">BSc - Computer Engineering</p>
+                            <p class="text-sm text-gray-500 mt-1">2019 - 2023 | <span class="text-emerald-400 font-bold">GPA: 3.17</span></p>
+                        </div>
                     </div>
                     <div class="w-full md:w-2/3 text-gray-300 text-base leading-relaxed space-y-3">
                         <p class="text-gray-300">Successfully graduated from the Computer Engineering program.</p>
@@ -149,31 +206,43 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center shadow-lg">
-                    <div class="w-full md:w-2/3">
-                        <h3 class="text-2xl font-bold text-white mb-2">SoftITo Game Developer Academy</h3>
-                        <p class="text-emerald-400 text-sm font-semibold mb-4">06.03.2023 - 11.05.2023 <span class="text-gray-500 ml-2">| 320 Hours</span></p>
-                        <p class="text-gray-300 leading-relaxed">
-                            Successfully completed 320-hour Game Developer Academy training supported by the Istanbul Chamber of Commerce (İTO). Built on foundational knowledge and skills from the Basic Competencies program. Gained expertise in Unity, C# scripting, game mechanics, and user interfaces.
-                        </p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center shadow-lg hover:border-gray-500 transition-colors">
+                    <div class="w-full md:w-2/3 flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xl text-emerald-400 overflow-hidden shrink-0 shadow-inner mt-1">
+                            <img src="Images/Logos/softito.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-cover">
+                            <span style="display:none;">SI</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">SoftITo Game Developer Academy</h3>
+                            <p class="text-emerald-400 text-sm font-semibold mb-4">06.03.2023 - 11.05.2023 <span class="text-gray-500 ml-2">| 320 Hours</span></p>
+                            <p class="text-gray-300 leading-relaxed">
+                                Successfully completed 320-hour Game Developer Academy training supported by the Istanbul Chamber of Commerce (İTO). Built on foundational knowledge and skills from the Basic Competencies program. Gained expertise in Unity, C# scripting, game mechanics, and user interfaces.
+                            </p>
+                        </div>
                     </div>
                     <div class="w-full md:w-1/3">
-                        <a href="Images/Certificates/softito.jpg" target="_blank" class="cert-card block overflow-hidden rounded-xl border-2 border-gray-600 hover:border-emerald-500 transition-colors shadow-md">
+                        <a href="Images/Certificates/softito.jpg" target="_blank" class="cert-card block overflow-hidden rounded-xl border-2 border-gray-600 hover:border-emerald-500 transition-colors shadow-lg">
                             <img src="Images/Certificates/softito.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="SoftITo Certificate" class="w-full h-auto object-cover transition-transform duration-500">
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center shadow-lg">
-                    <div class="w-full md:w-2/3">
-                        <h3 class="text-2xl font-bold text-white mb-2">Google Game and Application Academy</h3>
-                        <p class="text-emerald-400 text-sm font-semibold mb-4">01.12.2022 - 28.07.2023 <span class="text-gray-500 ml-2">| 8 Months</span></p>
-                        <p class="text-gray-300 leading-relaxed">
-                            I graduated from the Game and Application Academy, which was implemented with the support of the Ministry of Industry and Technology and the Presidential Digital Transformation Office, in cooperation with Google Turkey, the Entrepreneurship Foundation, and the T3 Enterprise Center.
-                        </p>
+                <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center shadow-lg hover:border-gray-500 transition-colors">
+                    <div class="w-full md:w-2/3 flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center font-bold text-xl text-emerald-400 overflow-hidden shrink-0 shadow-inner mt-1">
+                            <img src="Images/Logos/google.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" class="w-full h-full object-cover">
+                            <span style="display:none;">G</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Google Game and Application Academy</h3>
+                            <p class="text-emerald-400 text-sm font-semibold mb-4">01.12.2022 - 28.07.2023 <span class="text-gray-500 ml-2">| 8 Months</span></p>
+                            <p class="text-gray-300 leading-relaxed">
+                                I graduated from the Game and Application Academy, which was implemented with the support of the Ministry of Industry and Technology and the Presidential Digital Transformation Office, in cooperation with Google Turkey, the Entrepreneurship Foundation, and the T3 Enterprise Center.
+                            </p>
+                        </div>
                     </div>
                     <div class="w-full md:w-1/3">
-                        <a href="Images/Certificates/google.jpg" target="_blank" class="cert-card block overflow-hidden rounded-xl border-2 border-gray-600 hover:border-emerald-500 transition-colors shadow-md">
+                        <a href="Images/Certificates/google.jpg" target="_blank" class="cert-card block overflow-hidden rounded-xl border-2 border-gray-600 hover:border-emerald-500 transition-colors shadow-lg">
                             <img src="Images/Certificates/google.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="Google Academy Certificate" class="w-full h-auto object-cover transition-transform duration-500">
                         </a>
                     </div>
@@ -181,14 +250,14 @@
             </div>
         </section>
 
-        <section id="projects" class="scroll-mt-24 mb-24">
-            <h2 class="text-3xl font-bold mb-10 flex items-center">
-                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Featured Projects
+        <section id="projects" class="scroll-mt-24 mb-32 reveal">
+            <h2 class="text-3xl font-bold mb-12 flex items-center">
+                <span class="w-8 h-1 bg-emerald-500 mr-4 rounded-full"></span> Featured Projects
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700">
                     <div class="h-56 overflow-hidden bg-gray-700 relative">
                         <img src="Images/MyArcadeCenterV2/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="My Arcade Center v2" class="w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[80%]">
@@ -196,20 +265,20 @@
                             <span class="bg-gray-900/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-emerald-400 border border-emerald-500/30 shadow-sm">GamesMrkt</span>
                         </div>
                     </div>
-                    <div class="p-8">
+                    <div class="p-8 relative">
                         <h3 class="text-2xl font-bold mb-3 text-white">My Arcade Center v2 <span class="text-sm font-normal text-gray-500 ml-2">2024-2025</span></h3>
                         <p class="text-gray-400 mb-6 text-sm leading-relaxed">
                             Sequel built with expanded management mechanics, deeper economy systems and enhanced live-ops.
                         </p>
                         <div class="flex items-center justify-between">
-                            <button onclick="openModal('modal-arcadev2')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
+                            <button onclick="openModal('modal-arcadev2')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer shadow-md hover:shadow-emerald-500/20">
                                 View Details
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700">
                     <div class="h-56 overflow-hidden bg-gray-700 relative">
                         <img src="Images/MyArcadeCenter/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="My Arcade Center" class="w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[80%]">
@@ -217,20 +286,20 @@
                             <span class="bg-gray-900/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-emerald-400 border border-emerald-500/30 shadow-sm">GamesMrkt</span>
                         </div>
                     </div>
-                    <div class="p-8">
+                    <div class="p-8 relative">
                         <h3 class="text-2xl font-bold mb-3 text-white">My Arcade Center <span class="text-sm font-normal text-gray-500 ml-2">2023-2025</span></h3>
                         <p class="text-gray-400 mb-6 text-sm leading-relaxed">
                             Idle Arcade simulation. Generated $1M+ revenue. Integrated Nakama backend and managed WebGL ports.
                         </p>
                         <div class="flex items-center justify-between">
-                            <button onclick="openModal('modal-arcade')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
+                            <button onclick="openModal('modal-arcade')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer shadow-md hover:shadow-emerald-500/20">
                                 View Details
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700">
                     <div class="h-56 overflow-hidden bg-gray-700 relative">
                         <img src="Images/PlanetExplorer/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="Planet Explorer" class="w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[80%]">
@@ -238,20 +307,20 @@
                             <span class="bg-gray-900/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-emerald-400 border border-emerald-500/30 shadow-sm">Omicron Game</span>
                         </div>
                     </div>
-                    <div class="p-8">
+                    <div class="p-8 relative">
                         <h3 class="text-2xl font-bold mb-3 text-white">Planet Explorer <span class="text-sm font-normal text-gray-500 ml-2">Sep 2022</span></h3>
                         <p class="text-gray-400 mb-6 text-sm leading-relaxed">
                             3D mobile game developed from scratch. Features astronaut protection with strategic trap placement.
                         </p>
                         <div class="flex items-center justify-between">
-                            <button onclick="openModal('modal-planet')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
+                            <button onclick="openModal('modal-planet')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer shadow-md hover:shadow-emerald-500/20">
                                 View Details
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition-all duration-300">
+                <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700">
                     <div class="h-56 overflow-hidden bg-gray-700 relative">
                         <img src="Images/BallBlasting/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="Ball Blasting" class="w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[80%]">
@@ -259,13 +328,13 @@
                             <span class="bg-gray-900/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-emerald-400 border border-emerald-500/30 shadow-sm">Yaclo Games</span>
                         </div>
                     </div>
-                    <div class="p-8">
+                    <div class="p-8 relative">
                         <h3 class="text-2xl font-bold mb-3 text-white">Ball Blasting <span class="text-sm font-normal text-gray-500 ml-2">Jan 2021</span></h3>
                         <p class="text-gray-400 mb-6 text-sm leading-relaxed">
                             My debut project on Google Play. Integrated Leaderboards, Google Achievements, Ads, and IAPs.
                         </p>
                         <div class="flex items-center justify-between">
-                            <button onclick="openModal('modal-ballblasting')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer">
+                            <button onclick="openModal('modal-ballblasting')" class="px-4 py-2 bg-gray-700 hover:bg-emerald-600 rounded-xl text-sm font-bold transition-colors cursor-pointer shadow-md hover:shadow-emerald-500/20">
                                 View Details
                             </button>
                         </div>
@@ -275,70 +344,70 @@
             </div>
         </section>
 
-        <section id="other-projects" class="mb-24 scroll-mt-24">
-            <h2 class="text-3xl font-bold mb-10 flex items-center">
-                <span class="w-8 h-1 bg-emerald-500 mr-4"></span> Indie Projects & Prototypes
+        <section id="other-projects" class="mb-32 scroll-mt-24 reveal">
+            <h2 class="text-3xl font-bold mb-12 flex items-center">
+                <span class="w-8 h-1 bg-emerald-500 mr-4 rounded-full"></span> Indie Projects & Prototypes
             </h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-seataway')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/SeatAway/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Seat Away">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Seat Away <span class="text-xs font-normal text-gray-500 ml-1">Apr 2026</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Seat Away <span class="text-xs font-normal text-gray-500 ml-1">Apr 2026</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Technical assessment project demonstrating clean code principles. Built on Observer Pattern and Event-Driven architecture.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-seataway')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
                 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-yolleliho')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-emerald-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Freelance</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/Yolleliho/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Yolleliho">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Yolleliho <span class="text-xs font-normal text-gray-500 ml-1">Nov 2025</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Yolleliho <span class="text-xs font-normal text-gray-500 ml-1">Nov 2025</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Commercial freelance project involving full-cycle game development and mechanics implementation.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-yolleliho')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-hexaclash')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/HexaClash/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Hexa Clash">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Hexa Clash <span class="text-xs font-normal text-gray-500 ml-1">Apr 2025</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Hexa Clash <span class="text-xs font-normal text-gray-500 ml-1">Apr 2025</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Fast-paced test case project focusing on Hex grid mechanics and dynamic interactions.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-hexaclash')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-minifarm')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/MiniFarm/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="MiniFarm">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">MiniFarm <span class="text-xs font-normal text-gray-500 ml-1">Mar 2025</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">MiniFarm <span class="text-xs font-normal text-gray-500 ml-1">Mar 2025</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Farming simulation prototype evaluating resource management and inventory systems.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-minifarm')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-match3')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
                         <span class="bg-gray-900/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-emerald-400 border border-emerald-500/30 shadow-sm">GamesMrkt</span>
@@ -346,56 +415,56 @@
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/Match3/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Match-3">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Match-3 <span class="text-xs font-normal text-gray-500 ml-1">Oct 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Match-3 <span class="text-xs font-normal text-gray-500 ml-1">Oct 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">GamesMrkt test case focusing on array manipulation and pooling.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-match3')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-shooter')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/ShooterGame/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Shooter">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Shooter Game <span class="text-xs font-normal text-gray-500 ml-1">Aug 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Shooter Game <span class="text-xs font-normal text-gray-500 ml-1">Aug 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Fast-paced prototype focusing on gunplay and camera controls.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-shooter')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-oopgold')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/OOPGoldCollect/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="OOP Gold">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">OOP Gold Collect <span class="text-xs font-normal text-gray-500 ml-1">Aug 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">OOP Gold Collect <span class="text-xs font-normal text-gray-500 ml-1">Aug 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Deep dive into OOP principles, interfaces, and inheritance.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-oopgold')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-geodash')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/GeoDashClone/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Geometry Dash">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Geometry Dash <span class="text-xs font-normal text-gray-500 ml-1">Aug 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Geometry Dash <span class="text-xs font-normal text-gray-500 ml-1">Aug 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Rhythm-based physics and scrolling assessment.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-geodash')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-painthit')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-blue-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Published</span>
                         <span class="bg-gray-900/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-emerald-400 border border-emerald-500/30 shadow-sm">Yaclo Games</span>
@@ -403,168 +472,168 @@
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/PaintHit/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Paint Hit">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Paint Hit <span class="text-xs font-normal text-gray-500 ml-1">Jul 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Paint Hit <span class="text-xs font-normal text-gray-500 ml-1">Jul 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">A colorful, addictive hypercasual game officially published on the Google Play Store.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-painthit')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-bootcamp')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-indigo-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Bootcamp</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/BootcampU46/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bootcamp U46">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Google Bootcamp U46 <span class="text-xs font-normal text-gray-500 ml-1">Jun 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Google Bootcamp U46 <span class="text-xs font-normal text-gray-500 ml-1">Jun 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Collaborative project from an intensive game dev bootcamp.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-bootcamp')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-fishmaster')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/FishMaster/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Fish Master">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">The Fish Master <span class="text-xs font-normal text-gray-500 ml-1">Jun 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">The Fish Master <span class="text-xs font-normal text-gray-500 ml-1">Jun 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Deep-dive physics prototype with tension algorithms.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-fishmaster')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-netcode')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-indigo-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Multiplayer</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/NetcodeProject/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Netcode">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Netcode Project <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Netcode Project <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Technical exploration into Unity's Netcode for GameObjects.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-netcode')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-colorchange')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-blue-500/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Completed</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/ColorChange/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Color Change">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Color Change <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Color Change <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Hypercasual project focused on color-matching logic.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-colorchange')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-jamsoftito')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-orange-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Game Jam</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/SoftIToJam/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="SoftIto Jam">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">SoftITo Jam Game <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">SoftITo Jam Game <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Developed during the SoftITo Game Developer Academy Game Jam.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-jamsoftito')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-myplatform')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/MyPlatform/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="My Platform">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">My Platform <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">My Platform <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Classic 2D platformer prototype with state machines.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-myplatform')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-zigzag')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-blue-500/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Completed</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/ZigZagClone/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="ZigZag">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">ZigZag <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">ZigZag <span class="text-xs font-normal text-gray-500 ml-1">May 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">A fully completed endless runner game, analytical rebuild of procedural path generation.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-zigzag')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-armed')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-red-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">AR Project</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/ARMedQuiz/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="AR Medicine & Quiz">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">AR Medicine & Quiz <span class="text-xs font-normal text-gray-500 ml-1">Jan 2023</span></h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow">Augmented Reality educational app combining 3D visualization.</p>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">AR Medicine & Quiz <span class="text-xs font-normal text-gray-500 ml-1">Jan 2023</span></h3>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow">Augmented Reality educational app combining 3D medical visualization.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-armed')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-countmasters')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/CountMasters/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Count Masters">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">CountMasters <span class="text-xs font-normal text-gray-500 ml-1">Jan 2023</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">CountMasters <span class="text-xs font-normal text-gray-500 ml-1">Jan 2023</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Crowd-control mechanics and math-gate logic study.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-countmasters')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-rts')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/RTSMechanics/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="RTS Mechanics">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">RTS Mechanics <span class="text-xs font-normal text-gray-500 ml-1">Nov 2022</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">RTS Mechanics <span class="text-xs font-normal text-gray-500 ml-1">Nov 2022</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Strategic unit selection and agent commanding ground.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-rts')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-magarajam')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-orange-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Game Jam</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/MagaraJam/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Magara Jam">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Magara Jam #5 (Spite) <span class="text-xs font-normal text-gray-500 ml-1">Sep 2022</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Magara Jam #5 (Spite) <span class="text-xs font-normal text-gray-500 ml-1">Sep 2022</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Rapidly developed entry for Mağara Game Jam.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-magarajam')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-savethebaby')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
                         <span class="bg-gray-900/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-emerald-400 border border-emerald-500/30 shadow-sm">Omicron Game</span>
@@ -572,42 +641,42 @@
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/SaveTheBaby/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Save The Baby">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Save The Baby <span class="text-xs font-normal text-gray-500 ml-1">Jul 2022</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Save The Baby <span class="text-xs font-normal text-gray-500 ml-1">Jul 2022</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">A prototype project focused on core gameplay mechanics and physics interactions.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-savethebaby')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-bridgemp')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-indigo-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Multiplayer</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/BridgeRaceMP/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="MP Training">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Bridge Race Multiplayer <span class="text-xs font-normal text-gray-500 ml-1">Jun 2022</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Bridge Race Multiplayer <span class="text-xs font-normal text-gray-500 ml-1">Jun 2022</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Multiplayer iteration fully integrated with PlayFab and Photon Fusion.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-bridgemp')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-atmrush')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/ATMRushClone/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="ATM Rush">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">ATM Rush <span class="text-xs font-normal text-gray-500 ml-1">May 2022</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">ATM Rush <span class="text-xs font-normal text-gray-500 ml-1">May 2022</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Reverse-engineering test case prototype of stacking mechanics.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-atmrush')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-throwing')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
                         <span class="bg-gray-900/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-emerald-400 border border-emerald-500/30 shadow-sm">Omicron Game</span>
@@ -615,64 +684,64 @@
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/ThrowingProto/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Throwing Prototype">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Throwing Prototype <span class="text-xs font-normal text-gray-500 ml-1">May 2022</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Throwing Prototype <span class="text-xs font-normal text-gray-500 ml-1">May 2022</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Internship assessment utilizing parabolic trajectories.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-throwing')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-bridgerace')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/BridgeRaceProto/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bridge Race Prototype">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Bridge Race Prototype <span class="text-xs font-normal text-gray-500 ml-1">Apr 2022</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Bridge Race Prototype <span class="text-xs font-normal text-gray-500 ml-1">Apr 2022</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Technical prototype for NavMesh logic.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-bridgerace')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-zindhu')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-orange-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Game Jam</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/Zindhu/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Zindhu">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Zindhu <span class="text-xs font-normal text-gray-500 ml-1">Feb 2022</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Zindhu <span class="text-xs font-normal text-gray-500 ml-1">Feb 2022</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Hypercasual game developed during a Jam.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-zindhu')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
-                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 hover:border-emerald-500 transition-colors flex flex-col h-full shadow-md relative group">
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-hellsnightmare')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-orange-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Game Jam</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
                         <img src="Images/HellsNightmare/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Hells Nightmare">
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-1">Hell's Nightmare <span class="text-xs font-normal text-gray-500 ml-1">Feb 2021</span></h3>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Hell's Nightmare <span class="text-xs font-normal text-gray-500 ml-1">Feb 2021</span></h3>
                     <p class="text-sm text-gray-400 mb-4 flex-grow">Developed in 72 hours. Features 2D/2.5D integration.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
-                        <button onclick="openModal('modal-hellsnightmare')" class="text-emerald-400 font-bold text-sm hover:underline">View Details →</button>
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer id="contact" class="mt-24 pt-12 border-t border-gray-800 text-center">
+        <footer id="contact" class="mt-24 pt-12 border-t border-gray-800 text-center reveal">
             <h2 class="text-2xl font-bold mb-6 text-white">Contact</h2>
-            <p class="text-emerald-400 font-semibold mb-6">ertasolcay@hotmail.com</p>
+            <p class="text-emerald-400 font-semibold mb-6 text-lg hover:text-white transition-colors cursor-pointer">ertasolcay@hotmail.com</p>
             <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://www.linkedin.com/in/olcayertasmis/" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">LinkedIn</a>
-                <a href="https://github.com/olcayertasmis" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">GitHub</a>
-                <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">Google Play</a>
+                <a href="https://www.linkedin.com/in/olcayertasmis/" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors transform hover:scale-110">LinkedIn</a>
+                <a href="https://github.com/olcayertasmis" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors transform hover:scale-110">GitHub</a>
+                <a href="https://play.google.com/store/apps/dev?id=6436160508183281198&hl=tr" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors transform hover:scale-110">Google Play</a>
             </div>
             <p class="text-gray-600 text-xs">© 2026 Olcay Ertaşmış. All systems operational.</p>
         </footer>
@@ -680,17 +749,16 @@
     </div>
     
     <div id="dynamic-modal" class="fixed inset-0 bg-black/95 z-50 hidden opacity-0 transition-opacity duration-300 overflow-y-auto" onclick="closeModal()">
-        <div class="min-h-screen px-4 text-center">
-            <span class="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-            <div class="inline-block w-full max-w-4xl p-6 my-8 text-left align-middle transition-all transform bg-gray-900 border border-gray-700 shadow-xl rounded-2xl relative" onclick="event.stopPropagation()">
-                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl font-bold">&times;</button>
+        <div class="min-h-screen px-4 text-center flex items-center justify-center">
+            <div class="inline-block w-full max-w-4xl p-6 md:p-8 my-8 text-left transition-all transform bg-gray-900 border border-gray-700 shadow-[0_0_40px_rgba(16,185,129,0.15)] rounded-2xl relative" onclick="event.stopPropagation()">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-emerald-400 transition-colors text-3xl font-bold">&times;</button>
                 <div class="mt-2 text-gray-300">
                     <h3 id="modal-title" class="text-3xl font-bold text-white mb-2"></h3>
                     <p id="modal-subtitle" class="text-emerald-400 text-sm font-semibold mb-6"></p>
-                    <div id="modal-video-container" class="aspect-video bg-black rounded-lg mb-6 overflow-hidden hidden">
+                    <div id="modal-video-container" class="aspect-video bg-black rounded-lg mb-6 overflow-hidden hidden border border-gray-800">
                         <iframe id="modal-video" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div id="modal-desc" class="mb-6 leading-relaxed"></div>
+                    <div id="modal-desc" class="mb-6 leading-relaxed text-gray-300"></div>
                     <div id="modal-links" class="flex flex-wrap gap-4 mb-6"></div>
                     <h4 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Screenshots</h4>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6" id="modal-gallery"></div>
@@ -700,10 +768,10 @@
     </div>
 
     <div id="lightbox" class="fixed inset-0 bg-black/95 z-[60] hidden opacity-0 transition-opacity duration-300 flex items-center justify-center" onclick="closeLightbox()">
-        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-4xl font-bold">&times;</button>
-        <button onclick="changeLightboxImage(-1); event.stopPropagation();" class="absolute left-4 text-white text-5xl hover:text-emerald-400">&lsaquo;</button>
-        <img id="lightbox-img" src="" class="max-h-[90vh] max-w-[90vw] object-contain" onclick="event.stopPropagation();">
-        <button onclick="changeLightboxImage(1); event.stopPropagation();" class="absolute right-4 text-white text-5xl hover:text-emerald-400">&rsaquo;</button>
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-gray-400 hover:text-emerald-400 transition-colors text-4xl font-bold">&times;</button>
+        <button onclick="changeLightboxImage(-1); event.stopPropagation();" class="absolute left-4 text-white text-5xl hover:text-emerald-400 transition-colors">&lsaquo;</button>
+        <img id="lightbox-img" src="" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation();">
+        <button onclick="changeLightboxImage(1); event.stopPropagation();" class="absolute right-4 text-white text-5xl hover:text-emerald-400 transition-colors">&rsaquo;</button>
     </div>
 
     <script>
@@ -722,12 +790,12 @@
                 desc: `As a Game Tester at Hunel Games, I created test teams, was responsible for identifying bugs, testing mechanics, and ensuring game stability. Here are the main projects I tested:<br><br>
                        <strong>1. Survive Underground - Alpha Demo (PC)</strong><br>
                        A dark, atmospheric survival game.<br>
-                       <a href="https://hunelgames.itch.io/underground-alpha-demo" target="_blank" class="text-emerald-400 hover:underline">View on Itch.io</a><br>
-                       <a href="https://www.youtube.com/watch?v=TSa77VyrdyQ" target="_blank" class="text-emerald-400 hover:underline">Watch Gameplay</a><br><br>
+                       <a href="https://hunelgames.itch.io/underground-alpha-demo" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors underline">View on Itch.io</a><br>
+                       <a href="https://www.youtube.com/watch?v=TSa77VyrdyQ" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors underline">Watch Gameplay</a><br><br>
                        <strong>2. Challenge Party (PC)</strong><br>
                        A multiplayer party game with various mini-games.<br>
-                       <a href="https://store.steampowered.com/app/1558110/Challenge_Party/" target="_blank" class="text-emerald-400 hover:underline">View on Steam</a><br>
-                       <a href="https://www.youtube.com/watch?v=pQGHYQBa_hQ" target="_blank" class="text-emerald-400 hover:underline">Watch Gameplay</a>`,
+                       <a href="https://store.steampowered.com/app/1558110/Challenge_Party/" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors underline">View on Steam</a><br>
+                       <a href="https://www.youtube.com/watch?v=pQGHYQBa_hQ" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors underline">Watch Gameplay</a>`,
                 videoUrl: "", 
                 links: ``,
                 images: []
@@ -737,7 +805,7 @@
                 subtitle: "Technical Case | Apr 2026",
                 desc: "Developed as a technical assessment to showcase clean code and scalable architecture. The project heavily utilizes the Observer Pattern, Event-Driven architecture, and SOLID principles to ensure modularity and maintainability. Optimized for performance and a clean hierarchy.",
                 videoUrl: "https://www.youtube.com/embed/ic5qrr36gh8",
-                links: `<a href="https://github.com/olcayertasmis/Prototype_SeatAway/tree/main" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/Prototype_SeatAway/tree/main" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: ["Images/SeatAway/ss1.jpg", "Images/SeatAway/ss2.jpg", "Images/SeatAway/ss3.jpg", "Images/SeatAway/ss4.jpg", "Images/SeatAway/ss5.jpg"]
             },
             'modal-arcade': {
@@ -745,9 +813,9 @@
                 subtitle: "Idle Arcade | 1M+ Downloads | $1M+ Revenue",
                 desc: "A highly successful idle arcade game that reached 1M+ downloads and generated $1M+ in revenue on Google Play alone. I implemented core mechanics and Remote Config systems. Additionally, I independently managed the technical adaptation and publication for WebGL platforms.",
                 videoUrl: "https://www.youtube.com/embed/R4uwgcrIo1Q", 
-                links: `<a href="https://play.google.com/store/apps/details?id=com.gamesmrkt.arcadecenter&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store</a>
-                        <a href="https://apps.apple.com/cy/app/my-arcade-center/id6449451200?l=tr" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm">App Store</a>
-                        <a href="https://html5.gamedistribution.com/1ae5b8b1590c4119bb5163d98b51be2c/" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm">Play WebGL</a>`,
+                links: `<a href="https://play.google.com/store/apps/details?id=com.gamesmrkt.arcadecenter&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm shadow-md">Play Store</a>
+                        <a href="https://apps.apple.com/cy/app/my-arcade-center/id6449451200?l=tr" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm border border-gray-600 shadow-md">App Store</a>
+                        <a href="https://html5.gamedistribution.com/1ae5b8b1590c4119bb5163d98b51be2c/" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm border border-gray-600 shadow-md">Play WebGL</a>`,
                 images: ["Images/MyArcadeCenter/ss1.jpg", "Images/MyArcadeCenter/ss2.jpg", "Images/MyArcadeCenter/ss3.jpg", "Images/MyArcadeCenter/ss4.jpg", "Images/MyArcadeCenter/ss5.jpg", "Images/MyArcadeCenter/ss6.jpg", "Images/MyArcadeCenter/ss7.jpg"]
             },
             'modal-arcadev2': {
@@ -755,8 +823,8 @@
                 subtitle: "Idle Arcade | 500K+ Downloads",
                 desc: "The highly anticipated sequel to My Arcade Center. Built upon a refined architecture with expanded management mechanics. I integrated a Custom Map Tool, utilized Nakama for robust user data management, and implemented JSON-based Satori Feature Flags to conduct extensive A/B testing, supported by a Remote Config system.",
                 videoUrl: "https://www.youtube.com/embed/xHoydxc-O58", 
-                links: `<a href="https://play.google.com/store/apps/details?id=com.kyosointeractive.myac2&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store</a>
-                        <a href="https://apps.apple.com/cy/app/my-arcade-center-v2/id6503872496?l=tr" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm">App Store</a>`,
+                links: `<a href="https://play.google.com/store/apps/details?id=com.kyosointeractive.myac2&hl=tr" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm shadow-md">Play Store</a>
+                        <a href="https://apps.apple.com/cy/app/my-arcade-center-v2/id6503872496?l=tr" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors text-sm border border-gray-600 shadow-md">App Store</a>`,
                 images: ["Images/MyArcadeCenterV2/ss1.jpg", "Images/MyArcadeCenterV2/ss2.jpg", "Images/MyArcadeCenterV2/ss3.jpg", "Images/MyArcadeCenterV2/ss4.jpg", "Images/MyArcadeCenterV2/ss5.jpg", "Images/MyArcadeCenterV2/ss6.jpg"]
             },
             'modal-painthit': {
@@ -764,7 +832,7 @@
                 subtitle: "Published Game | Jul 2023",
                 desc: "A colorful, addictive hypercasual game officially published on the Google Play Store under Yaclo Games.",
                 videoUrl: "https://www.youtube.com/embed/3OceXgpoPoQ",
-                links: `<a href="https://play.google.com/store/apps/details?id=com.YacloGames.PaintHit" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store →</a>`,
+                links: `<a href="https://play.google.com/store/apps/details?id=com.YacloGames.PaintHit" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm shadow-md">Play Store →</a>`,
                 images: ["Images/PaintHit/ss1.jpg"]
             },
             'modal-ballblasting': {
@@ -772,7 +840,7 @@
                 subtitle: "Published Game | Jan 2021",
                 desc: "My debut Unity project and first published game on Google Play. I handled the core mechanics and integrated essential SDKs including Leaderboards, Google Achievements, Ads, and IAPs.",
                 videoUrl: "https://www.youtube.com/embed/O5gtg4Hd1Ms",
-                links: `<a href="https://play.google.com/store/apps/details?id=com.YacloGames.BallBlasting" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm">Play Store →</a>`,
+                links: `<a href="https://play.google.com/store/apps/details?id=com.YacloGames.BallBlasting" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-black font-bold rounded-lg transition-colors text-sm shadow-md">Play Store →</a>`,
                 images: ["Images/BallBlasting/ss1.jpg", "Images/BallBlasting/ss2.jpg", "Images/BallBlasting/ss3.jpg", "Images/BallBlasting/ss4.jpg"]
             },
             'modal-planet': {
@@ -796,7 +864,7 @@
                 subtitle: "Test Case | Apr 2025",
                 desc: "Fast-paced test case project focusing on Hex grid mechanics and dynamic interactions.",
                 videoUrl: "https://www.youtube.com/embed/KIkkipNMcUE", 
-                links: `<a href="https://github.com/olcayertasmis/Prototype_HexaClash" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/Prototype_HexaClash" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-minifarm': {
@@ -804,7 +872,7 @@
                 subtitle: "Test Case | Mar 2025",
                 desc: "Farming simulation prototype evaluating resource management, inventory systems, and save/load structures.",
                 videoUrl: "https://www.youtube.com/embed/7qT_fZIYAek", 
-                links: `<a href="https://github.com/olcayertasmis/MiniFarm" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/MiniFarm" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: ["Images/MiniFarm/ss1.jpg"]
             },
             'modal-match3': {
@@ -812,7 +880,7 @@
                 subtitle: "Test Case | Oct 2023",
                 desc: "The official test case that secured my position at GamesMrkt. Focuses on array manipulation, pooling, and core puzzle mechanics.",
                 videoUrl: "https://www.youtube.com/embed/oMUVn1l88kM", 
-                links: `<a href="https://github.com/olcayertasmis/Match-3" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/Match-3" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-shooter': {
@@ -820,21 +888,21 @@
                 subtitle: "Prototype | Aug 2023",
                 desc: "Fast-paced prototype focusing on gunplay mechanics, projectile physics, and responsive camera controls.",
                 videoUrl: "", 
-                links: `<a href="https://github.com/olcayertasmis/Shooter_Game" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/Shooter_Game" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-oopgold': {
                 title: "OOP Gold Collect",
                 subtitle: "Prototype | Aug 2023",
                 desc: "Focused on Object-Oriented Programming principles, interfaces and inheritance.",
-                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/OOP_Project_GoldCollect" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/OOP_Project_GoldCollect" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-geodash': {
                 title: "Geometry Dash",
                 subtitle: "Test Case | Aug 2023",
                 desc: "Technical assessment replicating rhythm-based physics and level scrolling of Geometry Dash.",
-                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/Geometry-Dash-Lite-Clone" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/Geometry-Dash-Lite-Clone" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-bootcamp': {
@@ -842,21 +910,21 @@
                 subtitle: "Bootcamp | Jun 2023",
                 desc: "Project developed collaboratively during an intensive game development bootcamp.",
                 videoUrl: "https://www.youtube.com/embed/5I9AundyaTs", 
-                links: `<a href="https://github.com/olcayertasmis/BootcampU46" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/BootcampU46" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: ["Images/BootcampU46/ss1.jpg", "Images/BootcampU46/ss2.jpg", "Images/BootcampU46/ss3.jpg", "Images/BootcampU46/ss4.jpg", "Images/BootcampU46/ss5.jpg", "Images/BootcampU46/ss6.jpg", "Images/BootcampU46/ss7.jpg", "Images/BootcampU46/ss8.jpg", "Images/BootcampU46/ss9.jpg", "Images/BootcampU46/ss10.jpg"]
             },
             'modal-fishmaster': {
                 title: "The Fish Master",
                 subtitle: "Prototype | Jun 2023",
                 desc: "Physics prototype featuring fishing mechanics and line tension algorithms.",
-                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/The-Fish-Master" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/The-Fish-Master" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-netcode': {
                 title: "Netcode Project",
                 subtitle: "Multiplayer | May 2023",
                 desc: "Exploration into Unity's Netcode for GameObjects (NGO).",
-                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/Netcode-First-Project" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/Netcode-First-Project" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-colorchange': {
@@ -864,7 +932,7 @@
                 subtitle: "Completed | May 2023",
                 desc: "Hypercasual project focused on color-matching logic.",
                 videoUrl: "https://www.youtube.com/embed/ai4cB-pCqfA", 
-                links: `<a href="https://github.com/olcayertasmis/ColorChange" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/ColorChange" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: ["Images/ColorChange/ss1.jpg", "Images/ColorChange/ss2.jpg"]
             },
             'modal-jamsoftito': {
@@ -872,7 +940,7 @@
                 subtitle: "Game Jam | May 2023",
                 desc: "Developed during the SoftITo Academy Game Jam.",
                 videoUrl: "https://www.youtube.com/embed/KoyCRIkC7iI", 
-                links: `<a href="https://github.com/olcayertasmis/JamSoftIto" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/JamSoftIto" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-myplatform': {
@@ -880,7 +948,7 @@
                 subtitle: "Prototype | May 2023",
                 desc: "Classic 2D platformer prototype designed to perfect jump arcs, ground detection, and state machines.",
                 videoUrl: "https://www.youtube.com/embed/vXDnzyDl0dI", 
-                links: `<a href="https://github.com/olcayertasmis/MyPlatform" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/MyPlatform" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-zigzag': {
@@ -888,14 +956,14 @@
                 subtitle: "Completed | May 2023",
                 desc: "Analytical rebuild of procedural path generation.",
                 videoUrl: "https://www.youtube.com/embed/yJQWyd2L6yo", 
-                links: `<a href="https://github.com/olcayertasmis/ZigZagGame" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/ZigZagGame" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: ["Images/ZigZagClone/ss1.jpg"]
             },
             'modal-armed': {
                 title: "AR Medicine & Quiz",
                 subtitle: "AR Project | Jan 2023",
                 desc: "AR educational app combining 3D medical visualization.",
-                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/_AR-Project_MedicineAndQuiz" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/_AR-Project_MedicineAndQuiz" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: ["Images/ARMedQuiz/ss1.jpg", "Images/ARMedQuiz/ss2.jpg", "Images/ARMedQuiz/ss3.jpg", "Images/ARMedQuiz/ss4.jpg"]
             },
             'modal-countmasters': {
@@ -903,14 +971,14 @@
                 subtitle: "Prototype | Jan 2023",
                 desc: "Crowd-control mechanics and math-gate logic study.",
                 videoUrl: "https://www.youtube.com/embed/VodMbgJ_M94", 
-                links: `<a href="https://github.com/olcayertasmis/_Prototype_CountMasters" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/_Prototype_CountMasters" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-rts': {
                 title: "RTS Mechanics",
                 subtitle: "Prototype | Nov 2022",
                 desc: "Unit selection and agent commanding ground.",
-                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/_Training_RTS-Game" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                videoUrl: "", links: `<a href="https://github.com/olcayertasmis/_Training_RTS-Game" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-magarajam': {
@@ -918,7 +986,7 @@
                 subtitle: "Game Jam | Sep 2022",
                 desc: "Entry for Mağara Game Jam.",
                 videoUrl: "https://www.youtube.com/embed/cufy0jVbPRc", 
-                links: `<a href="https://github.com/olcayertasmis/_GameJam_MagaraGameJam5" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/_GameJam_MagaraGameJam5" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: ["Images/MagaraJam/ss1.jpg", "Images/MagaraJam/ss2.jpg", "Images/MagaraJam/ss3.jpg", "Images/MagaraJam/ss4.jpg", "Images/MagaraJam/ss5.jpg"]
             },
             'modal-savethebaby': {
@@ -932,7 +1000,7 @@
                 subtitle: "Multiplayer | Jun 2022",
                 desc: "Integrated with PlayFab and Photon Fusion.",
                 videoUrl: "https://www.youtube.com/embed/RZgNY9dcobY", 
-                links: `<a href="https://github.com/olcayertasmis/_Training_NavmeshAndMultiplayer_BridgeRace" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/_Training_NavmeshAndMultiplayer_BridgeRace" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: ["Images/BridgeRaceMP/ss1.jpg", "Images/BridgeRaceMP/ss2.jpg"]
             },
             'modal-atmrush': {
@@ -940,7 +1008,7 @@
                 subtitle: "Test Case | May 2022",
                 desc: "Reverse-engineering test case prototype of stacking.",
                 videoUrl: "https://www.youtube.com/embed/YJM_L5wyTB4", 
-                links: `<a href="https://github.com/olcayertasmis/_Clone_ATMRush" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/_Clone_ATMRush" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-throwing': {
@@ -948,7 +1016,7 @@
                 subtitle: "Test Case | May 2022",
                 desc: "Internship assessment utilizing parabolic trajectories.",
                 videoUrl: "https://www.youtube.com/embed/cu0maG8pXwI", 
-                links: `<a href="https://github.com/olcayertasmis/_Prototype_Throwing" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/_Prototype_Throwing" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-bridgerace': {
@@ -956,7 +1024,7 @@
                 subtitle: "Prototype | Apr 2022",
                 desc: "Technical prototype for NavMesh logic.",
                 videoUrl: "https://www.youtube.com/embed/pTlFmJznF_o", 
-                links: `<a href="https://github.com/olcayertasmis/_Prototype_BridgeRace" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/_Prototype_BridgeRace" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-zindhu': {
@@ -964,7 +1032,7 @@
                 subtitle: "Game Jam | Feb 2022",
                 desc: "Hypercasual game developed during a Jam.",
                 videoUrl: "https://www.youtube.com/embed/SBae8f11giQ", 
-                links: `<a href="https://github.com/olcayertasmis/_GameJam_Zindhu" target="_blank" class="text-emerald-400 font-bold hover:underline">View Repo →</a>`,
+                links: `<a href="https://github.com/olcayertasmis/_GameJam_Zindhu" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
             'modal-hellsnightmare': {
@@ -972,7 +1040,7 @@
                 subtitle: "Game Jam | Feb 2021",
                 desc: "Developed in 72 hours. Features 2D/2.5D integration.",
                 videoUrl: "https://www.youtube.com/embed/9LWzgbmqiCE", 
-                links: `<a href="https://olcayertasmis.itch.io/hells-nightmare" target="_blank" class="text-emerald-400 font-bold hover:underline mr-4">Play Itch.io</a> <a href="https://github.com/olcayertasmis/_GameJam_HellsNightmare" target="_blank" class="text-gray-400 font-bold hover:text-white">Repo</a>`,
+                links: `<a href="https://olcayertasmis.itch.io/hells-nightmare" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline mr-4">Play Itch.io</a> <a href="https://github.com/olcayertasmis/_GameJam_HellsNightmare" target="_blank" class="text-gray-400 font-bold hover:text-white transition-colors">Repo</a>`,
                 images: ["Images/HellsNightmare/ss1.jpg", "Images/HellsNightmare/ss2.jpg", "Images/HellsNightmare/ss3.jpg", "Images/HellsNightmare/ss4.jpg", "Images/HellsNightmare/ss5.jpg", "Images/HellsNightmare/ss6.jpg", "Images/HellsNightmare/ss7.jpg"]
             }
         };
@@ -1004,10 +1072,10 @@
             currentLightboxImages = data.images;
             
             if(data.images.length === 0) {
-                gallery.innerHTML = `<div class="col-span-full text-center text-gray-500 py-8 border border-gray-700 border-dashed rounded-lg">Visuals Coming Soon</div>`;
+                gallery.innerHTML = `<div class="col-span-full text-center text-gray-500 py-8 border border-gray-800 border-dashed rounded-xl bg-gray-800/30">Visuals Coming Soon</div>`;
             } else {
                 data.images.forEach((imgSrc, index) => {
-                    gallery.innerHTML += `<img src="${imgSrc}" class="rounded-lg object-cover h-32 w-full border border-gray-700 cursor-pointer hover:border-emerald-500 transition-colors" onclick="openLightbox(${index})" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="Screenshot">`;
+                    gallery.innerHTML += `<img src="${imgSrc}" class="rounded-xl object-cover h-32 w-full border border-gray-700 cursor-pointer hover:border-emerald-500 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-300" onclick="openLightbox(${index})" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="Screenshot">`;
                 });
             }
             
@@ -1046,6 +1114,91 @@
             if (currentLightboxIndex >= currentLightboxImages.length) currentLightboxIndex = 0;
             document.getElementById('lightbox-img').src = currentLightboxImages[currentLightboxIndex];
         }
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(section => { observer.observe(section); });
+
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null };
+
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 1.5 + 0.5;
+            }
+            update() {
+                this.x += this.vx; this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+                if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(52, 211, 153, 0.5)';
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.min(window.innerWidth / 20, 80); 
+            for (let i = 0; i < particleCount; i++) { particles.push(new Particle()); }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(52, 211, 153, ${0.15 - distance/800})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+                if (mouse.x != null && mouse.y != null) {
+                    const dx = particles[i].x - mouse.x;
+                    const dy = particles[i].y - mouse.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(52, 211, 153, ${0.3 - distance/500})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        initParticles();
+        animateParticles();
     </script>
 </body>
 </html>
