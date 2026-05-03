@@ -21,11 +21,8 @@
         .cert-card:hover img { transform: scale(1.05); }
         body.modal-open { overflow: hidden; touch-action: none; }
 
-        /* Mobil Cihazlar İçin Güvenli Reveal Animasyonu */
         .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        /* Fallback: Eğer JS çalışmazsa veya takılırsa, her şey baştan görünür olsun diye */
         .no-js .reveal { opacity: 1; transform: none; }
 
         .glitch-hover { position: relative; display: inline-block; transition: color 0.2s; cursor: pointer; }
@@ -263,6 +260,7 @@
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
                 <div class="project-card bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 cursor-pointer group" onclick="openModal('modal-arcadev2')">
                     <div class="h-56 overflow-hidden bg-gray-700 relative">
                         <img src="Images/MyArcadeCenterV2/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" alt="My Arcade Center v2" class="w-full h-full object-cover transition-transform duration-500">
@@ -346,6 +344,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -356,6 +355,7 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
+                <!-- 1 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-seataway')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
@@ -370,6 +370,7 @@
                     </div>
                 </div>
                 
+                <!-- 2 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-yolleliho')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-emerald-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Freelance</span>
@@ -384,6 +385,7 @@
                     </div>
                 </div>
 
+                <!-- 3 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-hexaclash')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
@@ -398,6 +400,7 @@
                     </div>
                 </div>
 
+                <!-- 4 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-minifarm')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
@@ -412,6 +415,7 @@
                     </div>
                 </div>
 
+                <!-- 5 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-match3')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
@@ -427,6 +431,7 @@
                     </div>
                 </div>
 
+                <!-- 6 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-shooter')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
@@ -441,6 +446,7 @@
                     </div>
                 </div>
 
+                <!-- 7 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-geodash')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
@@ -449,12 +455,13 @@
                         <img src="Images/GeometryDash/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Geometry Dash">
                     </div>
                     <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Geometry Dash <span class="text-xs font-normal text-gray-500 ml-1">Aug 2023</span></h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow">A high-precision 3-day test case project replicating rhythm-based physics and level scrolling.</p>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow">A high-precision 3-day test case project replicating rhythm-based physics and level scrolling of Geometry Dash.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
                         <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
+                <!-- 8 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-painthit')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-blue-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Published</span>
@@ -470,6 +477,7 @@
                     </div>
                 </div>
 
+                <!-- 9 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-bootcamp')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-indigo-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Bootcamp</span>
@@ -484,6 +492,7 @@
                     </div>
                 </div>
 
+                <!-- 10 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-fishmaster')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-blue-500/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Completed</span>
@@ -498,6 +507,7 @@
                     </div>
                 </div>
 
+                <!-- 11 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-netcode')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-indigo-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Multiplayer</span>
@@ -512,6 +522,7 @@
                     </div>
                 </div>
 
+                <!-- 12 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-colorchange')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-blue-500/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Completed</span>
@@ -526,6 +537,7 @@
                     </div>
                 </div>
 
+                <!-- 13 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-zigzag')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-blue-500/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Completed</span>
@@ -540,6 +552,7 @@
                     </div>
                 </div>
 
+                <!-- 14 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-egerobot')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-purple-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Simulation</span>
@@ -555,20 +568,22 @@
                     </div>
                 </div>
 
+                <!-- 15 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-armed')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-red-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">AR Project</span>
                     </div>
                     <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
-                        <img src="Images/ARMedQuiz/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="AR Med">
+                        <img src="Images/ARMedQuiz/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="AR Medicine & Quiz">
                     </div>
                     <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">AR Medicine & Quiz <span class="text-xs font-normal text-gray-500 ml-1">Jan 2023</span></h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow">Augmented Reality educational app combining 3D visualization.</p>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow">Augmented Reality educational app combining 3D medical visualization.</p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
                         <span class="text-emerald-400 font-bold text-sm">View Details →</span>
                     </div>
                 </div>
 
+                <!-- 16 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-countmasters')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
@@ -583,6 +598,7 @@
                     </div>
                 </div>
 
+                <!-- 17 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-rts')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
@@ -597,6 +613,22 @@
                     </div>
                 </div>
 
+                <!-- 18 -->
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-magarajam')">
+                    <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
+                        <span class="bg-orange-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Game Jam</span>
+                    </div>
+                    <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
+                        <img src="Images/MagaraJam/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Magara Jam">
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Magara Jam #5 (Spite) <span class="text-xs font-normal text-gray-500 ml-1">Sep 2022</span></h3>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow">Rapidly developed entry for Mağara Game Jam.</p>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- 19 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-savethebaby')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
@@ -612,6 +644,7 @@
                     </div>
                 </div>
 
+                <!-- 20 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-bridgemp')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-indigo-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Multiplayer</span>
@@ -626,6 +659,7 @@
                     </div>
                 </div>
 
+                <!-- 21 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-atmrush')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
@@ -640,6 +674,7 @@
                     </div>
                 </div>
 
+                <!-- 22 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-throwing')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-teal-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Test Case</span>
@@ -655,6 +690,7 @@
                     </div>
                 </div>
 
+                <!-- 23 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-bridgerace')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
@@ -669,7 +705,22 @@
                     </div>
                 </div>
 
-                <!-- Son 4 Oyun (Öğrenme Süreci / Zaman Tüneli) -->
+                <!-- 24 -->
+                <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-zindhu')">
+                    <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
+                        <span class="bg-orange-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Game Jam</span>
+                    </div>
+                    <div class="h-40 mb-4 overflow-hidden rounded-xl bg-gray-700 relative">
+                        <img src="Images/Zindhu/cover.jpg" onerror="this.src='https://placehold.co/800x450/1f2937/10b981?text=Coming+Soon'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Zindhu">
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">Zindhu <span class="text-xs font-normal text-gray-500 ml-1">Feb 2022</span></h3>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow">Hypercasual game developed during a Jam.</p>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700/50">
+                        <span class="text-emerald-400 font-bold text-sm">View Details →</span>
+                    </div>
+                </div>
+
+                <!-- 25 (Zaman Tüneli Başlangıcı) -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-hellsnightmare')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-orange-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Game Jam</span>
@@ -684,6 +735,7 @@
                     </div>
                 </div>
 
+                <!-- 26 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-carhyper')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
@@ -698,6 +750,7 @@
                     </div>
                 </div>
 
+                <!-- 27 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-myplatform')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">Prototype</span>
@@ -712,6 +765,7 @@
                     </div>
                 </div>
 
+                <!-- 28 -->
                 <div class="project-card bg-gray-800/80 border border-gray-700 rounded-2xl p-6 flex flex-col h-full relative group cursor-pointer" onclick="openModal('modal-firstninja')">
                     <div class="absolute top-4 left-4 flex flex-wrap gap-1.5 z-10 max-w-[80%]">
                         <span class="bg-gray-600/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">First Game</span>
@@ -728,7 +782,6 @@
 
             </div>
 
-            <!-- Profesyonel Kapanış Notu -->
             <div class="col-span-full mt-12 text-center reveal">
                 <p class="text-gray-500 text-sm font-medium tracking-wide">
                     * Listelenmeyen daha onlarca AR-GE prototipi ve gizlilik sözleşmeleri (NDA) gereği paylaşılamayan ticari projeler bulunmaktadır.
@@ -985,12 +1038,6 @@
                 desc: "A prototype project focused on core gameplay mechanics and physics interactions.",
                 videoUrl: "https://www.youtube.com/embed/3iIpw7S2zgg", links: ``, images: []
             },
-            'modal-carhyper': {
-                title: "Car Hyper Casual",
-                subtitle: "Prototype | Jun 2022",
-                desc: "A fast-paced hypercasual vehicle prototype testing reflex-based gameplay loops.",
-                videoUrl: "https://www.youtube.com/embed/CJTQz7ossjg", links: ``, images: []
-            },
             'modal-bridgemp': {
                 title: "Bridge Race Multiplayer",
                 subtitle: "Multiplayer | Jun 2022",
@@ -1023,6 +1070,14 @@
                 links: `<a href="https://github.com/olcayertasmis/_Prototype_BridgeRace" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
                 images: []
             },
+            'modal-zindhu': {
+                title: "Zindhu",
+                subtitle: "Game Jam | Feb 2022",
+                desc: "Hypercasual game developed during a Jam.",
+                videoUrl: "https://www.youtube.com/embed/SBae8f11giQ", 
+                links: `<a href="https://github.com/olcayertasmis/_GameJam_Zindhu" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline">View Repo →</a>`,
+                images: []
+            },
             'modal-hellsnightmare': {
                 title: "Hell's Nightmare",
                 subtitle: "Game Jam | Feb 2021",
@@ -1030,6 +1085,12 @@
                 videoUrl: "https://www.youtube.com/embed/9LWzgbmqiCE", 
                 links: `<a href="https://olcayertasmis.itch.io/hells-nightmare" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors hover:underline mr-4">Play Itch.io</a> <a href="https://github.com/olcayertasmis/_GameJam_HellsNightmare" target="_blank" class="text-gray-400 font-bold hover:text-white transition-colors">Repo</a>`,
                 images: ["Images/HellsNightmare/ss1.jpg", "Images/HellsNightmare/ss2.jpg", "Images/HellsNightmare/ss3.jpg", "Images/HellsNightmare/ss4.jpg", "Images/HellsNightmare/ss5.jpg", "Images/HellsNightmare/ss6.jpg", "Images/HellsNightmare/ss7.jpg"]
+            },
+            'modal-carhyper': {
+                title: "Car Hyper Casual",
+                subtitle: "Prototype | Jun 2022",
+                desc: "A fast-paced hypercasual vehicle prototype testing reflex-based gameplay loops.",
+                videoUrl: "https://www.youtube.com/embed/CJTQz7ossjg", links: ``, images: []
             },
             'modal-firstninja': {
                 title: "First Game Ninja",
@@ -1111,7 +1172,6 @@
             document.getElementById('lightbox-img').src = currentLightboxImages[currentLightboxIndex];
         }
 
-        // ESC Tuşu Kontrolü
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 if (!document.getElementById('lightbox').classList.contains('hidden')) {
@@ -1122,7 +1182,6 @@
             }
         });
 
-        // Mobil dostu toleranslı Intersection Observer
         const observerOptions = { root: null, rootMargin: '50px', threshold: 0.05 };
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -1134,7 +1193,6 @@
         }, observerOptions);
         document.querySelectorAll('.reveal').forEach(section => { observer.observe(section); });
 
-        // Fallback: JS takılırsa veya kaydırma algılanmazsa her şeyi görünür yap
         setTimeout(() => {
             document.querySelectorAll('.reveal:not(.active)').forEach(el => {
                 el.classList.add('active');
@@ -1174,7 +1232,6 @@
 
         function initParticles() {
             particles = [];
-            // Mobil cihazlarda partikül sayısını azaltarak optimizasyon
             const particleCount = window.innerWidth < 768 ? Math.min(window.innerWidth / 30, 40) : Math.min(window.innerWidth / 20, 80); 
             for (let i = 0; i < particleCount; i++) { particles.push(new Particle()); }
         }
