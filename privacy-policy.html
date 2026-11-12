@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Paint Hit | YacloGames</title>
-    <meta name="description" content="Privacy Policy for Paint Hit, developed by YacloGames (Olcay Ertaşmış).">
+    <title>Privacy Policy - YacloGames | Mobile Games & Applications</title>
+    <meta name="description" content="Official Privacy Policy for all mobile games and applications published by YacloGames (Olcay Ertaşmış), covering Paint Hit, Ball Blasting, and future releases.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://olcayertasmis.com/privacy-policy.html">
     <link rel="icon" type="image/png" href="https://olcayertasmis.com/Images/Logos/yaclo.png">
@@ -53,7 +53,7 @@
             text-decoration: none;
         }
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             font-weight: 800;
             color: #ffffff;
             margin-bottom: 10px;
@@ -98,16 +98,34 @@
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 12px;
+            gap: 14px;
             font-size: 0.92rem;
         }
         .info-item strong {
-            color: #ffffff;
+            color: var(--text-secondary);
             display: block;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        .info-item span, .info-item a {
+            color: #ffffff;
+            font-weight: 500;
+        }
+        .app-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .app-tag {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
         }
         section {
             background: var(--card-bg);
@@ -117,7 +135,7 @@
             margin-bottom: 24px;
         }
         h2 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: #ffffff;
             margin-bottom: 14px;
             display: flex;
@@ -131,6 +149,11 @@
             height: 8px;
             background: var(--accent);
             border-radius: 50%;
+        }
+        h3 {
+            font-size: 1.05rem;
+            color: #ffffff;
+            margin: 16px 0 8px 0;
         }
         p {
             color: var(--text-secondary);
@@ -156,14 +179,12 @@
             left: 0;
             font-weight: bold;
         }
-        .badge {
-            display: inline-block;
-            background: var(--accent-light);
-            color: var(--accent);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.82rem;
-            font-weight: 600;
+        .note-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 14px 0;
         }
         a {
             color: var(--accent);
@@ -188,8 +209,8 @@
             <a href="https://olcayertasmis.com" class="brand">
                 <span>●</span> YacloGames &bull; Olcay Ertaşmış
             </a>
-            <h1>Privacy Policy / Gizlilik Politikası</h1>
-            <p class="meta">App: <strong>Paint Hit</strong> &bull; Last Updated: November 12, 2026</p>
+            <h1>Mobile Games & Applications Privacy Policy</h1>
+            <p class="meta">Universal Privacy Policy for YacloGames &bull; Last Updated: November 2026</p>
             
             <div class="lang-switch">
                 <button class="lang-btn active" onclick="setLang('en')">English</button>
@@ -197,24 +218,24 @@
             </div>
         </header>
 
-        <!-- Summary Box -->
+        <!-- Summary Info Box -->
         <div class="info-box">
             <div class="info-grid">
-                <div class="info-item">
-                    <strong>Application Name</strong>
-                    <span>Paint Hit</span>
-                </div>
-                <div class="info-item">
-                    <strong>Package ID</strong>
-                    <span>com.YacloGames.PaintHit</span>
-                </div>
                 <div class="info-item">
                     <strong>Developer / Publisher</strong>
                     <span>YacloGames (Olcay Ertaşmış)</span>
                 </div>
                 <div class="info-item">
-                    <strong>Contact Email</strong>
-                    <a href="mailto:ertasolcay@hotmail.com">ertasolcay@hotmail.com</a>
+                    <strong>Official Contact Email</strong>
+                    <a href="mailto:yaclogames@gmail.com">yaclogames@gmail.com</a>
+                </div>
+                <div class="info-item" style="grid-column: 1 / -1;">
+                    <strong>Covered Applications & Titles</strong>
+                    <div class="app-tags">
+                        <span class="app-tag">Paint Hit (Offline Casual)</span>
+                        <span class="app-tag">Ball Blasting (Connected / Ads / IAP)</span>
+                        <span class="app-tag">All games published under YacloGames</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -222,61 +243,90 @@
         <!-- ENGLISH CONTENT -->
         <div id="content-en">
             <section>
-                <h2>1. Introduction & Overview</h2>
-                <p>This Privacy Policy applies to the mobile game <strong>Paint Hit</strong> (hereinafter referred to as the "Game" or "Application"), developed and published by <strong>YacloGames (Olcay Ertaşmış)</strong>.</p>
-                <p>We respect your privacy. Paint Hit is designed as a standalone offline casual game. <strong>We do NOT collect, store, sell, or share any personal data from our users.</strong></p>
+                <h2>1. Scope & Developer Identity</h2>
+                <p>This Privacy Policy governs all mobile games and applications (collectively referred to as the <strong>"Applications"</strong> or <strong>"Games"</strong>) developed and published by <strong>YacloGames</strong> (operated by <strong>Olcay Ertaşmış</strong>), including but not limited to:</p>
+                <ul>
+                    <li><strong>Paint Hit</strong> (Package ID: <code>com.YacloGames.PaintHit</code>) &mdash; Standalone offline casual game.</li>
+                    <li><strong>Ball Blasting</strong> &mdash; Arcade puzzle title featuring optional in-app purchases, Google Mobile Ads, and Google Play Games Services.</li>
+                    <li>All future titles released by YacloGames on the Google Play Store.</li>
+                </ul>
+                <p>We are dedicated to safeguarding user privacy and being transparent about our data handling practices.</p>
             </section>
 
             <section>
-                <h2>2. Information Collection and Use</h2>
-                <p>We believe in strict data minimization. During your gameplay experience:</p>
+                <h2>2. Architecture-Specific Data Practices</h2>
+                
+                <h3>A. Offline & Standalone Titles (e.g., Paint Hit)</h3>
+                <div class="note-box">
+                    <p><strong>Paint Hit</strong> is built as an offline casual title:</p>
+                    <ul>
+                        <li>Does NOT collect any personal identity information (PII).</li>
+                        <li>Does NOT use advertising networks or analytics trackers.</li>
+                        <li>Stores level progress and scores purely locally on your personal device.</li>
+                    </ul>
+                </div>
+
+                <h3>B. Connected Titles with Services (e.g., Ball Blasting)</h3>
+                <p>In titles with integrated Google services and monetization (such as <strong>Ball Blasting</strong>), third-party services may process specific technical and gameplay data:</p>
                 <ul>
-                    <li><strong>No Personal Information:</strong> We do not collect names, email addresses, phone numbers, contacts, or real identity information.</li>
-                    <li><strong>No Precise Geolocation:</strong> We do not request or track your physical GPS coordinates or location data.</li>
-                    <li><strong>No Account Required:</strong> You do not need to register or sign in with social networks (such as Google, Facebook, Apple, or others) to play the game.</li>
-                    <li><strong>No User Content Uploads:</strong> The application does not collect or store photos, files, camera feeds, or microphone recordings.</li>
-                    <li><strong>Local Game Progress:</strong> Your level progress and game scores are processed entirely on your local device.</li>
+                    <li><strong>In-App Purchases (IAP):</strong> Processed securely through <strong>Google Play In-App Billing</strong>. YacloGames never accesses, collects, or stores your credit card, bank details, or billing information. All financial transactions are managed entirely by Google LLC.</li>
+                    <li><strong>Advertisements (Google AdMob):</strong> Non-sensitive technical identifiers (such as the Google Advertising ID and IP address) may be processed by Google to deliver, measure, and personalize ads in accordance with Google's Advertising Policies.</li>
+                    <li><strong>Game Analytics & Crash Reporting (Firebase):</strong> We use <strong>Google Firebase (Analytics & Crashlytics)</strong> to measure game performance, monitor crash logs, analyze retention, and improve gameplay balance.</li>
+                    <li><strong>Leaderboards & Achievements (Google Play Games Services):</strong> If you choose to sign in with your Google Play Games account, your public gamer profile, scores, and unlocked achievements are synchronized with Google Play leaderboards.</li>
                 </ul>
             </section>
 
             <section>
-                <h2>3. Permissions and Technical Connectivity</h2>
-                <p>The Application includes standard network connectivity permissions (<code>android.permission.INTERNET</code>) embedded by the Unity game runtime engine. This permission is not used to transmit personal information, behavioral profiles, or user tracking data to private servers.</p>
-            </section>
-
-            <section>
-                <h2>4. Third-Party Services</h2>
-                <p>The Application is built using the <strong>Unity Engine</strong> (developed by Unity Technologies). The game runs locally without external advertising SDKs (AdMob, Unity Ads, etc.) or external analytics trackers.</p>
-                <p>To learn more about Unity's general privacy practices, you may review Unity's Privacy Policy at: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">https://unity.com/legal/game-player-and-app-user-privacy-policy</a>.</p>
-            </section>
-
-            <section>
-                <h2>5. Children's Privacy (COPPA & GDPR-K Compliance)</h2>
-                <p>Protecting the privacy of children is especially important to us:</p>
+                <h2>3. Third-Party Service Providers</h2>
+                <p>Our applications may integrate trusted third-party SDKs provided by industry leaders. Each third-party provider operates under its own privacy policy:</p>
                 <ul>
-                    <li>Paint Hit complies with the Children's Online Privacy Protection Act (COPPA), GDPR-K, and Google Play Families Policies.</li>
-                    <li>We do not knowingly collect or solicit any personally identifiable information from children under the age of 13 (or under the applicable age in your jurisdiction).</li>
-                    <li>If a parent or guardian discovers that any personal information has inadvertently reached us, please contact us immediately, and we will promptly ensure its deletion.</li>
+                    <li><strong>Google Play Services:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+                    <li><strong>Google AdMob:</strong> <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Privacy Policy</a></li>
+                    <li><strong>Google Firebase:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Firebase Privacy Policy</a></li>
+                    <li><strong>Unity Technologies (Game Engine):</strong> <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">Unity Player Privacy Policy</a></li>
                 </ul>
             </section>
 
             <section>
-                <h2>6. Data Retention and Deletion</h2>
-                <p>Because we do not collect personal data on external servers, we maintain no database of user personal records. If you wish to remove all local gameplay data, simply uninstalling the application or clearing the game data via your device's Application Settings will permanently erase all local records.</p>
+                <h2>4. Device Permissions</h2>
+                <p>Our games only request standard system permissions necessary for gameplay execution:</p>
+                <ul>
+                    <li><code>android.permission.INTERNET</code>: Required for online leaderboards, ad rendering, crash reporting, and Google Play licensing.</li>
+                    <li><code>android.permission.ACCESS_NETWORK_STATE</code>: Used by the game engine to determine whether an active internet connection is available.</li>
+                    <li><code>com.android.vending.BILLING</code>: Required for in-game purchases via Google Play.</li>
+                </ul>
+                <p>We do NOT request access to your camera, microphone, contact list, GPS location, or external media files.</p>
             </section>
 
             <section>
-                <h2>7. Changes to This Privacy Policy</h2>
-                <p>We may periodically update this Privacy Policy to reflect application updates or regulatory requirements. Any modifications will be posted directly to this URL with a revised "Last Updated" date. We encourage you to review this page periodically.</p>
+                <h2>5. Opt-Out & Advertising ID Controls</h2>
+                <p>You have full control over personalized advertising on your Android device. You can reset or delete your Google Advertising ID or opt out of interest-based ads anytime via:</p>
+                <p><em>Device Settings &rarr; Google &rarr; Ads &rarr; Reset Advertising ID or Delete Advertising ID.</em></p>
             </section>
 
             <section>
-                <h2>8. Contact Us</h2>
-                <p>If you have any questions, feedback, or concerns regarding this Privacy Policy or the practices of Paint Hit, please feel free to reach out to us at:</p>
+                <h2>6. Children's Privacy (COPPA & Google Play Families Policies)</h2>
+                <p>Protecting children's privacy is of the utmost importance to YacloGames:</p>
+                <ul>
+                    <li>Our games comply with the Children's Online Privacy Protection Act (COPPA), GDPR-K, and Google Play Families Policies.</li>
+                    <li>We do not knowingly collect personal identifiable information from children under the age of 13.</li>
+                    <li>In games intended for mixed audiences or children, third-party advertising SDKs are configured to serve contextual, non-personalized ads appropriate for family audiences.</li>
+                    <li>If you believe a child has provided us with personal information, please notify us at <a href="mailto:yaclogames@gmail.com">yaclogames@gmail.com</a>, and we will take immediate corrective action.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>7. Data Retention & Deletion Rights</h2>
+                <p>YacloGames does not operate proprietary backend databases storing personal user profiles. Gameplay progress tied to Google Play Games Services can be managed or deleted directly through the Google Play Games app. To reset local gameplay data, simply clear application data in your Android settings or uninstall the game.</p>
+            </section>
+
+            <section>
+                <h2>8. Developer Contact Information</h2>
+                <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or any of our games, please reach out to us:</p>
                 <p>
                     <strong>Developer / Publisher:</strong> YacloGames (Olcay Ertaşmış)<br>
-                    <strong>Website:</strong> <a href="https://olcayertasmis.com" target="_blank">https://olcayertasmis.com</a><br>
-                    <strong>Email:</strong> <a href="mailto:ertasolcay@hotmail.com">ertasolcay@hotmail.com</a>
+                    <strong>Official Email:</strong> <a href="mailto:yaclogames@gmail.com">yaclogames@gmail.com</a><br>
+                    <strong>Official Website:</strong> <a href="https://olcayertasmis.com" target="_blank">https://olcayertasmis.com</a>
                 </p>
             </section>
         </div>
@@ -284,61 +334,90 @@
         <!-- TURKISH CONTENT -->
         <div id="content-tr" style="display: none;">
             <section>
-                <h2>1. Giriş ve Genel Bakış</h2>
-                <p>Bu Gizlilik Politikası, <strong>YacloGames (Olcay Ertaşmış)</strong> tarafından geliştirilen ve yayımlanan <strong>Paint Hit</strong> (bundan sonra "Oyun" veya "Uygulama" olarak anılacaktır) mobil oyunu için geçerlidir.</p>
-                <p>Gizliliğinize saygı duyuyoruz. Paint Hit çevrimdışı ve bağımsız bir gündelik oyun olarak tasarlanmıştır. <strong>Kullanıcılarımızdan herhangi bir kişisel veri toplamıyor, saklamıyor, satmıyor ve paylaşmıyoruz.</strong></p>
+                <h2>1. Kapsam ve Geliştirici Kimliği</h2>
+                <p>Bu Gizlilik Politikası, <strong>YacloGames</strong> (<strong>Olcay Ertaşmış</strong>) tarafından geliştirilen ve yayımlanan tüm mobil oyunlar, uygulamalar ve dijital servisler (birlikte <strong>"Uygulamalar"</strong> veya <strong>"Oyunlar"</strong> olarak anılacaktır) için geçerlidir:</p>
+                <ul>
+                    <li><strong>Paint Hit</strong> (Paket Kimliği: <code>com.YacloGames.PaintHit</code>) &mdash; Tamamen çevrimdışı, tekil gündelik oyun.</li>
+                    <li><strong>Ball Blasting</strong> &mdash; Google Play Oyun Servisleri (Lider Tabloları/Başarımlar), Google AdMob reklamları ve Google Play Uygulama İçi Satın Alma (IAP) özelliklerini içeren arcade bulmaca oyunu.</li>
+                    <li>YacloGames tarafından Google Play Store üzerinde yayımlanan tüm mevcut ve gelecekteki oyunlar.</li>
+                </ul>
+                <p>Oyuncularımızın gizliliğine tam saygı duyuyor ve veri süreçlerimizde tam şeffaflık ilkesini benimsiyoruz.</p>
             </section>
 
             <section>
-                <h2>2. Bilgi Toplama ve Kullanım</h2>
-                <p>Veri minimizasyonu prensibine sıkı sıkıya bağlıyız. Oyun deneyiminiz sırasında:</p>
+                <h2>2. Oyun Türlerine Göre Veri Uygulamaları</h2>
+                
+                <h3>A. Çevrimdışı ve Bağımsız Oyunlar (Örn: Paint Hit)</h3>
+                <div class="note-box">
+                    <p><strong>Paint Hit</strong> tamamen çevrimdışı bir yapıya sahiptir:</p>
+                    <ul>
+                        <li>Kişisel kimlik verisi (ad, e-posta, telefon vb.) toplanmaz.</li>
+                        <li>Reklam ağı veya kullanıcı takip analiz araçları içermez.</li>
+                        <li>Oyun içi skor ve seviye ilerlemesi tamamen kendi cihazınızın belleğinde yerel olarak tutulur.</li>
+                    </ul>
+                </div>
+
+                <h3>B. Bağlantılı ve Servis İçeren Oyunlar (Örn: Ball Blasting)</h3>
+                <p>Oyun deneyimini zenginleştirmek, skor tabloları sunmak ve isteğe bağlı satın alımları desteklemek amacıyla <strong>Ball Blasting</strong> gibi yapımlarda güvenilir Google servisleri kullanılmaktadır:</p>
                 <ul>
-                    <li><strong>Kişisel Bilgi Toplanmaz:</strong> Ad, soyad, e-posta adresi, telefon numarası veya kimlik bilgileri talep edilmez ve toplanmaz.</li>
-                    <li><strong>Hassas Konum Bilgisi Alınmaz:</strong> GPS koordinatlarınız veya fiziksel konumunuz takip edilmez.</li>
-                    <li><strong>Hesap / Giriş Gerekmez:</strong> Oyunu oynamak için herhangi bir sosyal ağ (Google, Facebook vb.) ile giriş yapmanız gerekmez.</li>
-                    <li><strong>Fotoğraf / İçerik Yüklemesi Yoktur:</strong> Uygulama kamera, mikrofon, fotoğraf veya kişisel dosyalara erişmez.</li>
-                    <li><strong>Yerel İlerleme:</strong> Seviye ilerlemeniz ve skorlarınız yalnızca kendi cihazınız üzerinde yerel olarak tutulur.</li>
+                    <li><strong>Uygulama İçi Satın Alma (IAP):</strong> Tüm satın alımlar <strong>Google Play Faturalandırma Altyapısı (Google Play Billing)</strong> üzerinden güvenle yürütülür. YacloGames kredi kartı, banka veya ödeme bilgilerinize asla erişemez ve bu verileri saklamaz; tüm finansal süreçler Google LLC tarafından yönetilir.</li>
+                    <li><strong>Reklamlar (Google AdMob):</strong> Reklam gösterimi, performans ölçümü ve sahteciliği önlemek amacıyla Google Reklam Kimliği (Advertising ID) ve IP adresi gibi kişisel olmayan teknik veriler Google AdMob tarafından işlenebilir.</li>
+                    <li><strong>Analitik ve Çökme Takibi (Google Firebase):</strong> Oyunun kararlılığını artırmak, performans sorunlarını ve çökmeleri tespit etmek için <strong>Firebase Analytics & Crashlytics</strong> kullanılır.</li>
+                    <li><strong>Lider Tablosu ve Başarımlar (Google Play Games):</strong> Google Play Oyunlar hesabınızla giriş yaptığınızda herkese açık oyuncu profiliniz, yüksek skorlarınız ve başarımlarınız Google Play liderlik tablosu ile eşitlenir.</li>
                 </ul>
             </section>
 
             <section>
-                <h2>3. İzinler ve Teknik Bağlantı</h2>
-                <p>Uygulama, Unity oyun motoru çalışma zamanı tarafından standart olarak eklenen ağ iznini (<code>android.permission.INTERNET</code>) içerir. Bu izin kullanıcıları izlemek, profil çıkarmak veya kişisel verileri harici sunuculara göndermek amacıyla kullanılmaz.</p>
-            </section>
-
-            <section>
-                <h2>4. Üçüncü Taraf Hizmetler</h2>
-                <p>Uygulama <strong>Unity Engine</strong> (Unity Technologies) oyun altyapısı kullanılarak geliştirilmiştir. Uygulama içinde harici reklam SDK'ları (AdMob, Unity Ads vb.) veya harici kullanıcı izleme analiz araçları yer almamaktadır.</p>
-                <p>Unity'nin genel gizlilik ilkeleri hakkında daha fazla bilgiye şu bağlantıdan ulaşabilirsiniz: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">Unity Gizlilik Politikası</a>.</p>
-            </section>
-
-            <section>
-                <h2>5. Çocukların Gizliliği (COPPA ve Aile Politikası Uyumu)</h2>
-                <p>Çocukların gizliliğini korumak en yüksek önceliklerimizdendir:</p>
+                <h2>3. Üçüncü Taraf Hizmet Sağlayıcılar</h2>
+                <p>Oyunlarımızda kullanılan üçüncü taraf kütüphaneler kendi gizlilik politikaları çerçevesinde hizmet sunar:</p>
                 <ul>
-                    <li>Paint Hit, Çocukların Çevrimiçi Gizliliğini Koruma Yasası (COPPA) ve Google Play Aile Politikaları ile tam uyumludur.</li>
-                    <li>13 yaşın (veya bulunduğunuz ülkedeki yasal yaş sınırının) altındaki çocuklardan bilerek veya kasten kişisel bilgi toplanmaz.</li>
-                    <li>Bir ebeveyn veya vasi çocuğunun kişisel verisinin tarafımıza ulaştığını fark ederse, lütfen bizimle derhal iletişime geçsin; söz konusu veri derhal sistemden temizlenecektir.</li>
+                    <li><strong>Google Play Hizmetleri:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a></li>
+                    <li><strong>Google AdMob:</strong> <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Politikası</a></li>
+                    <li><strong>Google Firebase:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Gizlilik Politikası</a></li>
+                    <li><strong>Unity Engine:</strong> <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">Unity Gizlilik Politikası</a></li>
                 </ul>
             </section>
 
             <section>
-                <h2>6. Veri Saklama ve Silme Hakları</h2>
-                <p>Sunucularımızda kullanıcıya ait kişisel veri tutulmadığı için harici bir veri tabanı bulunmamaktadır. Cihazınızdaki yerel oyun verilerini sıfırlamak için oyunu cihazınızdan kaldırmanız veya Uygulama Ayarları üzerinden "Verileri Temizle" seçeneğini kullanmanız yeterlidir.</p>
+                <h2>4. Cihaz İzinleri</h2>
+                <p>Oyunlarımız yalnızca oyun deneyimi için teknik olarak zorunlu izinleri talep eder:</p>
+                <ul>
+                    <li><code>android.permission.INTERNET</code>: Lider tablosu eşitleme, reklam gösterimi ve çökme raporlaması için gereklidir.</li>
+                    <li><code>android.permission.ACCESS_NETWORK_STATE</code>: İnternet bağlantısının aktif olup olmadığını denetlemek için kullanılır.</li>
+                    <li><code>com.android.vending.BILLING</code>: Google Play üzerinden güvenli uygulama içi satın alma yapabilmek için gereklidir.</li>
+                </ul>
+                <p>Kameranıza, mikrofonunuza, rehberinize veya özel dosyalarınıza kesinlikle erişim istenmez.</p>
             </section>
 
             <section>
-                <h2>7. Değişiklikler</h2>
-                <p>Bu Gizlilik Politikası zaman zaman güncellenebilir. Herhangi bir değişiklik doğrudan bu URL üzerinden güncel "Son Güncelleme" tarihiyle yayımlanacaktır.</p>
+                <h2>5. Reklam Kimliği Kontrolü ve Tercihler</h2>
+                <p>Android cihazınız üzerinden kişiselleştirilmiş reklam tercihlerinizi dilediğiniz zaman yönetebilir veya Reklam Kimliğinizi (Advertising ID) sıfırlayabilirsiniz:</p>
+                <p><em>Cihaz Ayarları &rarr; Google &rarr; Reklamlar &rarr; Reklam Kimliğini Sıfırla veya Reklam Kimliğini Sil.</em></p>
             </section>
 
             <section>
-                <h2>8. İletişim</h2>
-                <p>Bu Gizlilik Politikası hakkında sorularınız, geri bildirimleriniz veya talepleriniz için bize her zaman ulaşabilirsiniz:</p>
+                <h2>6. Çocukların Gizliliği (COPPA ve Google Play Aile Politikaları)</h2>
+                <p>Çocukların gizliliği YacloGames için en yüksek önceliktir:</p>
+                <ul>
+                    <li>Oyunlarımız COPPA, GDPR-K ve Google Play Aile Politikaları ile tam uyumludur.</li>
+                    <li>13 yaşın altındaki çocuklardan bilerek kişisel kimlik bilgisi toplanmaz.</li>
+                    <li>Aile veya çocuk hedef kitlesine dahil oyunlarda reklamlar yalnızca yaşa uygun, genel içerikli (kişiselleştirilmemiş) olarak gösterilir.</li>
+                    <li>Herhangi bir verinin yanlışlıkla tarafımıza ulaştığını düşünüyorsanız, lütfen <a href="mailto:yaclogames@gmail.com">yaclogames@gmail.com</a> adresinden bize ulaşın; derhal gerekli işlem yapılacaktır.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>7. Veri Saklama ve Kullanıcı Hakları</h2>
+                <p>YacloGames kullanıcıların kişisel profillerini saklayan bağımsız bir sunucu veri tabanı işletmemektedir. Google Play Games üzerindeki skor ve başarımlarınızı doğrudan Google Play Oyunlar uygulaması üzerinden yönetebilirsiniz. Cihazınızdaki yerel oyun kayıtlarını silmek için oyunu cihazınızdan kaldırmanız veya Ayarlar üzerinden oyun verilerini temizlemeniz yeterlidir.</p>
+            </section>
+
+            <section>
+                <h2>8. İletişim Bilgileri</h2>
+                <p>Gizlilik Politikamız veya oyunlarımızla ilgili her türlü soru ve talebiniz için bize dilediğiniz zaman ulaşabilirsiniz:</p>
                 <p>
                     <strong>Geliştirici / Yayıncı:</strong> YacloGames (Olcay Ertaşmış)<br>
-                    <strong>Web Sitesi:</strong> <a href="https://olcayertasmis.com" target="_blank">https://olcayertasmis.com</a><br>
-                    <strong>E-posta:</strong> <a href="mailto:ertasolcay@hotmail.com">ertasolcay@hotmail.com</a>
+                    <strong>Resmi E-posta:</strong> <a href="mailto:yaclogames@gmail.com">yaclogames@gmail.com</a><br>
+                    <strong>Resmi Web Sitesi:</strong> <a href="https://olcayertasmis.com" target="_blank">https://olcayertasmis.com</a>
                 </p>
             </section>
         </div>
@@ -362,4 +441,3 @@
     </script>
 </body>
 </html>
-
